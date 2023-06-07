@@ -1,0 +1,39 @@
+.footer_wrap {
+	padding: 2% 5%;
+	background: $primary-color;
+	color: #fff;
+
+	* {
+		color: #fff;
+	}
+
+	.footer_top {
+		&:after {
+			display: block;
+			clear: both;
+			content: '';
+		}
+
+		&__btn,
+		&__desc,
+		&__clock {
+			float: left;
+			margin-right: 120px;
+		}
+
+		&__clock {
+			.clock_text {
+				display: flex;
+			}
+		}
+		.sns_list {
+			float: right;
+		}
+	}
+	.footer_bottom {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		margin-top: 200px;
+	}
+}
