@@ -11,11 +11,11 @@ $green: #7c9070;
 $deep-green: #3d6657;
 $light-blue: #bfedd9;
 
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:wght@400&family=Public+Sans@500;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@800;900&display=swap');
 
 .text_hidden {
 	position: absolute;
@@ -65,16 +65,27 @@ $light-blue: #bfedd9;
 		a {
 			position: relative;
 			display: inline-block;
-			padding-left: 18px;
+			color: $primary-color;
 			font-weight: 500;
-			font-size: 18px;
+			font-size: 20px;
 			line-height: 33px;
 
 			&::before {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 1px;
+				background-color: $primary-color;
+				bottom: 0;
+				left: 0;
+				transform-origin: right;
+				transform: scaleX(0);
+				transition: transform 0.3s ease-in-out;
 			}
-			&:hover {
-				&::before {
-				}
+
+			&:hover::before {
+				transform-origin: left;
+				transform: scaleX(1);
 			}
 		}
 	}
@@ -125,7 +136,6 @@ $light-blue: #bfedd9;
 		top: 0;
 		right: 0;
 		overflow: hidden;
-		border-radius: 33px;
 		display: inline-block;
 		width: 100%;
 		height: 100%;

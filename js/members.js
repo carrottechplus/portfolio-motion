@@ -1,30 +1,25 @@
-const wrap = document.querySelector('.member_list_wrap .member_item');
-/*
-fetchDepart();
-async function fetchDepart() {
-	const result = await fetch('/DB/department.json');
-	const data = await result.json();
-	console.log(data);
-}
-*/
+const wrap = document.querySelector('.member_list_wrap .member_list');
+
 let tags = '';
 
 fetch('/DB/members.json')
 	.then((res) => {
-		return res.json(); //promise객체 반환
+		return res.json();
 	})
 	.then((data) => {
 		const memberData = data.members;
 
 		memberData.map((data) => {
 			tags += `
-        <article>
-          <div class='pic'>
-            <img src='img/${data.pic}' />
-          </div>
-          <h2>${data.name}</h2>
-          <p>${data.position}</p>
-        </article>
+				<li class='member_item'>
+					<div class='member_item__info'>
+						<h2 class='member_item__title'><span>${data.name}</span></h2>
+						<p class='member_item__desc'>${data.position}</p>
+					</div>
+					<div class='member_item__img'>
+						<img src='img/${data.pic}' />
+					</div>
+				</li>
       `;
 		});
 		wrap.innerHTML = tags;
@@ -32,12 +27,3 @@ fetch('/DB/members.json')
 	.catch((err) => {
 		console.log(err);
 	});
-
-const abc = {
-	a: 'test',
-	b: () => {
-		console.log('test');
-	},
-};
-
-abc.b();

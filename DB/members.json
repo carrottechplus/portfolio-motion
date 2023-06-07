@@ -1,9 +1,14 @@
 {
   "members": [
     {
-      "name": "Julia Jung2",
+      "name": "Julia Jung",
       "position": "President",
       "pic": "member1.jpg"
+    },
+    {
+      "name": "Sara Kim",
+      "position": "Back-end Engineer",
+      "pic": "member5.jpg"
     },
     {
       "name": "David Choi",
@@ -19,11 +24,6 @@
       "name": "Paul Davison",
       "position": "Front-end Engineer",
       "pic": "member4.jpg"
-    },
-    {
-      "name": "Sara Kim",
-      "position": "Back-end Engineer",
-      "pic": "member5.jpg"
     },
     {
       "name": "Michael",
