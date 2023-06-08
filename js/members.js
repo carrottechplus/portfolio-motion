@@ -23,7 +23,7 @@ fetch('/DB/members.json')
       `;
 		});
 		wrap.innerHTML = tags;
-	})
-	.catch((err) => {
-		console.log(err);
 	});
+// .catch((err) => {
+// 	console.log(err);
+// });
