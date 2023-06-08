@@ -2,7 +2,7 @@ const wrap = document.querySelector('.member_list_wrap .member_list');
 
 let tags = '';
 
-fetch('/DB/members.json')
+fetch('DB/members.json')
 	.then((res) => res.json())
 	.then((data) => {
 		const memberData = data.members;
