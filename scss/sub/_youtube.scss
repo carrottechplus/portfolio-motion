@@ -1,0 +1,132 @@
+.sub_wrap {
+	.youtube_wrap {
+		padding: 0 5%;
+
+		.sub_head {
+			display: flex;
+			align-items: flex-end;
+			padding-bottom: 20px;
+			// width: 100%;
+			.head_title {
+			}
+			.head_title__sub {
+				display: inline-block;
+				width: 180px;
+				padding-bottom: 10px;
+				margin-left: 50px;
+			}
+		}
+
+		.inner {
+			border-top: 1px solid #000;
+		}
+
+		.gallery_list {
+			display: flex;
+			flex-wrap: wrap;
+			padding-top: 35px;
+			padding-bottom: 35px;
+
+			li {
+				flex: 0 0 33%;
+				width: calc(100% / 3);
+				border-left: 1px solid $primary-color;
+				&:nth-child(3n + 3) {
+					border-right: 1px solid $primary-color;
+				}
+
+				.gallery_item {
+					overflow: hidden;
+					display: inline-block;
+					width: 100%;
+					padding: 96px 32px 16px;
+
+					&__title {
+						overflow: hidden;
+						display: -webkit-box;
+						height: 90px;
+						font-size: 25px;
+						font-weight: 300;
+						line-height: 1.2;
+						margin-bottom: 96px;
+						-webkit-line-clamp: 3;
+						line-clamp: 3;
+						-webkit-box-orient: vertical;
+						text-overflow: ellipsis;
+					}
+
+					.gallery_info {
+						justify-content: space-between;
+						align-items: center;
+						display: flex;
+
+						span {
+							display: inline-block;
+							font-size: 16px;
+							font-weight: 300;
+							line-height: 1.45;
+						}
+					}
+
+					&__img {
+						margin-top: 16px;
+						z-index: 1;
+						background-color: #d8d8d8;
+						border-radius: 1.25em;
+						position: relative;
+						overflow: hidden;
+						padding-top: 66.666%;
+						transition: 0.2s;
+						border-bottom: 1px solid $primary-color;
+
+						&::before {
+							overflow: hidden;
+							border-radius: 1.25em;
+							display: inline-block;
+							width: 100%;
+							height: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+							background: $orange;
+							opacity: 0;
+							content: '';
+							mix-blend-mode: multiply;
+							z-index: 1;
+							transition: 0.3s;
+						}
+
+						img {
+							width: 100%;
+							height: 100%;
+							max-width: none;
+							object-fit: cover;
+							position: absolute;
+							top: 0;
+							bottom: 0;
+							left: 0;
+							right: 0;
+							transition: 0.4s;
+						}
+					}
+
+					.gallery_item__img:hover {
+						&::before {
+							opacity: 0.8;
+						}
+
+						img {
+							transform: scale(1.2);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $tablet) {
+	}
+
+	@media screen and (max-width: $mobile) {
+	}
+}

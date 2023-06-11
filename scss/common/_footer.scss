@@ -1,30 +1,29 @@
 .footer_wrap {
-	padding: 2% 5%;
-	background: $primary-color;
-	color: #fff;
-
+	padding: 3% 5%;
+	background: rgba(0, 0, 0, 0.9);
+	color: #d5d5d5;
 	* {
-		color: #fff;
+		color: #d5d5d5;
 	}
 
 	.footer_top {
-		&:after {
-			display: block;
-			clear: both;
-			content: '';
-		}
+		display: flex;
 
 		.btn_totop {
-			color: white;
+			display: inline-block;
+			width: auto;
+			height: 30px;
+			color: #d5d5d5;
 			position: relative;
 			padding-bottom: 2px;
+			font-size: 20px;
 
 			&::before {
 				content: '';
 				position: absolute;
 				width: 100%;
 				height: 1px;
-				background-color: white;
+				background-color: #d5d5d5;
 				bottom: 0;
 				left: 0;
 				transform-origin: right;
@@ -38,32 +37,110 @@
 			}
 		}
 
-		&__btn,
-		&__desc,
 		&__clock {
-			float: left;
-			margin-right: 120px;
-		}
+			width: 220px;
 
-		&__clock {
+			.country {
+				font-size: 20px;
+				font-weight: 500;
+				letter-spacing: 1px;
+			}
 			.clock_text {
 				display: flex;
+				margin-top: 10px;
+				font-size: 20px;
+				font-weight: 500;
+				letter-spacing: 3px;
+				font-family: monospace;
+
+				.clock_dot {
+					animation: blink 1s step-end infinite;
+				}
+				@keyframes blink {
+					50% {
+						opacity: 0;
+					}
+				}
+				.clock_dl {
+					display: none;
+					&.on {
+						display: block;
+					}
+				}
 			}
 		}
-		.sns_list {
-			float: right;
+
+		&__content {
+			flex: 1;
+			padding-right: 200px;
+
+			.footer_sns {
+				display: flex;
+				align-items: center;
+				width: 100%;
+				margin-left: -5px;
+
+				li {
+					&:not(:first-child) {
+						margin-left: 10px;
+					}
+					a {
+						display: inline-block;
+						width: 30px;
+						height: 30px;
+						text-align: center;
+						i {
+							font-size: 20px;
+						}
+					}
+				}
+			}
+
+			.footer_desc {
+				margin-top: 20px;
+				padding-top: 15px;
+				border-top: 1px solid #777;
+
+				* {
+					color: #777;
+				}
+
+				p {
+					margin-top: 5px;
+					font-size: 14px;
+				}
+			}
 		}
 	}
 	.footer_bottom {
 		display: flex;
 		align-items: center;
 		width: 100%;
-		margin-top: 200px;
+		margin-top: 100px;
 
 		.gnb {
+			flex: 1;
 			li {
 				a {
 					color: #fff;
+				}
+			}
+		}
+		.nav_side_btn {
+			border: 2px solid white;
+			height: 47px;
+			line-height: 43px;
+			span {
+				font-size: 2em;
+			}
+			&:hover {
+				border-color: $orange;
+				span {
+					color: $primary-color;
+				}
+				&::before {
+					background: $orange;
+					transform: scaleY(1);
 				}
 			}
 		}
