@@ -146,3 +146,51 @@
 		}
 	}
 }
+
+@media screen and (max-width: $tablet) {
+	.footer_wrap {
+		position: relative;
+
+		.footer_top {
+			display: block;
+
+			&__content {
+				padding-right: 0;
+				margin-top: 40px;
+				margin-bottom: 40px;
+			}
+
+			.btn_totop {
+				position: absolute;
+				top: 5%;
+				right: 5%;
+			}
+		}
+		.footer_bottom {
+			justify-content: space-between;
+			.gnb {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.footer_wrap {
+		.footer_top {
+			&__content {
+				text-align: center;
+				.footer_sns {
+					justify-content: center;
+					margin-left: 0;
+				}
+			}
+		}
+		.footer_bottom {
+			justify-content: space-between;
+			.gnb {
+				display: none;
+			}
+		}
+	}
+}

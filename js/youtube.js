@@ -41,12 +41,12 @@ function createList(json) {
 		tags += `
         <li>
           <a href='#' class='gallery_item' title='${channelId}'>
-            <p class='gallery_item__title'>${title}</p>
-            <p class='gallery_item__desc'>${desc}</p>
+            <h2 class='gallery_item__title'>${title.length > 100 ? title.substr(0, 100) + '...' : title}</h2>
+            <p class='gallery_item__desc'>${desc.length > 50 ? desc.substr(0, 50) + '...' : desc}</p>
             
             <div class='gallery_item__info gallery_info'>
               <span class='gallery_info__name'>${name}</span>
-              <span class='gallery_info__date'>${date}</span>
+              <span class='gallery_info__date'>${date.split('T')[0].split('-').join('.')}</span>
             </div>
             <div class='gallery_item__img'>
               <img src='${thumbUrl}' class='gallery_img'>
