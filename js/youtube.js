@@ -1,17 +1,15 @@
 const wrap = document.querySelector('.sub_wrap .youtube_wrap .gallery_list');
-
-document.body.addEventListener('click', (e) => {
-	// e.preventDefault();
-	console.log(e.target.className == 'gallery_item');
-	if (e.target.className == 'gallery_item') createPop(e.target.getAttribute('title'));
-
-	if (e.target.className == 'close') removePop();
-});
-
 const key = 'AIzaSyC4TpEbx2d9lOtjiVQIg3b6wA6ZKKrDL7c';
 const list = 'PLQZTVbf9_qAn_Nwrz2maZG64AaEBcFZfb';
 const num = 10;
 const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`;
+document.body.addEventListener('click', (e) => {
+	// e.preventDefault();
+	console.log(e.target.className === 'gallery_item');
+	if (e.target.className === 'gallery_item') createPop(e.target.getAttribute('data-id'));
+
+	if (e.target.className === 'close') removePop();
+});
 
 // 유튜브 플레이 리스트 가져오기 (fetch)
 // 가져온 리스트 화면에 뿌리기
@@ -26,10 +24,21 @@ fetch(url)
 		createList(json);
 	});
 
+// async function fetchData() {
+// 	const key = 'AIzaSyC4TpEbx2d9lOtjiVQIg3b6wA6ZKKrDL7c';
+// 	const list = 'PLQZTVbf9_qAn_Nwrz2maZG64AaEBcFZfb';
+// 	const num = 10;
+// 	const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`;
+
+// 	const data = await fetch(url);
+// 	const json = await data.json();
+// 	createList(json);
+// }
+
 function createList(json) {
 	let tags = '';
 	json.items.forEach((data) => {
-		console.log(data);
+		// console.log(data);
 		const title = data.snippet.title;
 		const desc = data.snippet.description;
 		const name = data.snippet.videoOwnerChannelTitle;
@@ -40,7 +49,7 @@ function createList(json) {
 
 		tags += `
         <li>
-          <a href='#' class='gallery_item' title='${channelId}'>
+          <div class='gallery_item' data-id='${channelId}'>
             <h2 class='gallery_item__title'>${title.length > 100 ? title.substr(0, 100) + '...' : title}</h2>
             <p class='gallery_item__desc'>${desc.length > 50 ? desc.substr(0, 50) + '...' : desc}</p>
             
@@ -51,7 +60,7 @@ function createList(json) {
             <div class='gallery_item__img'>
               <img src='${thumbUrl}' class='gallery_img'>
             </div>
-          </a>
+          </div>
         </li>
       `;
 	});
@@ -61,7 +70,7 @@ function createList(json) {
 
 //동적으로 팝업 생성함수
 function createPop(id) {
-	console.log(id);
+	// console.log(id);
 	const tags = `	
 			<div class='con'>
 				<iframe src='https://www.youtube.com/embed/${id}' ></iframe>
@@ -71,7 +80,7 @@ function createPop(id) {
 	const pop = document.createElement('aside');
 	pop.className = 'pop';
 	pop.innerHTML = tags;
-	console.log(tags);
+
 	document.body.append(pop);
 	setTimeout(() => document.querySelector('.pop').classList.add('on'), 0);
 
