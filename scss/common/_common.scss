@@ -1,6 +1,7 @@
 $tablet: 979px;
 $mobile: 639px;
 $primary-color: #080808;
+$secondary-color: #333;
 $red: #ff3c31;
 $orange: #f97b22;
 $pink: #e49393;
@@ -162,6 +163,9 @@ $light-blue: #bfedd9;
 	height: auto;
 	min-height: 625px;
 	padding-top: 160px;
+}
+.sub_wrap {
+	color: $secondary-color;
 }
 
 @media screen and (max-width: $tablet) {

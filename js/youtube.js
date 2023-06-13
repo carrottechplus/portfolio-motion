@@ -50,16 +50,18 @@ function createList(json) {
 		tags += `
         <li>
           <div class='gallery_item' data-id='${channelId}'>
-            <h2 class='gallery_item__title'>${title.length > 100 ? title.substr(0, 100) + '...' : title}</h2>
-            <p class='gallery_item__desc'>${desc.length > 50 ? desc.substr(0, 50) + '...' : desc}</p>
+						<div class='gallery_item__img'>
+							<img src='${thumbUrl}' class='gallery_img'>
+						</div>
+						<div class='gallery_item__side gallery_side'>
+            <h2 class='gallery_side__title'>${title.length > 70 ? title.substr(0, 70) + '...' : title}</h2>
+            <p class='gallery_side__desc'>${desc.length > 150 ? desc.substr(0, 150) + '...' : desc}</p>
             
-            <div class='gallery_item__info gallery_info'>
+            <div class='gallery_side__info gallery_info'>
               <span class='gallery_info__name'>${name}</span>
               <span class='gallery_info__date'>${date.split('T')[0].split('-').join('.')}</span>
             </div>
-            <div class='gallery_item__img'>
-              <img src='${thumbUrl}' class='gallery_img'>
-            </div>
+          </div>
           </div>
         </li>
       `;
