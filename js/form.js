@@ -17,7 +17,7 @@ function isTxt(name, len) {
 	if (txt.length < len) {
 		resetErr(input);
 		const errMsg = document.createElement('p');
-		errMsg.innerText = `텍스트를 ${len}글자 이상 입력하세요.`;
+		errMsg.innerText = `텍스트를 ${len}글자 이상 입력하시오`;
 		input.closest('td').append(errMsg);
 		return false;
 	} else {
@@ -119,13 +119,9 @@ function isSelect(name) {
 	}
 }
 
-// 에러 메세지 제거 함수
 function resetErr(inputs) {
-	// 파라미터로 들어오는 요소의 형태 확인해야함 배열인지 뭔지
-
 	let el = null;
 	inputs.length ? (el = inputs[0]) : (el = inputs);
-	// 배열인 경우에만 length가 존재
 
 	const errMsg = el.closest('td').querySelector('p');
 	if (errMsg) {

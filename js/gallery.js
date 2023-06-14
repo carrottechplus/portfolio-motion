@@ -18,7 +18,7 @@ fetch(url_user)
 		items.forEach((item, idx) => {
 			const num = idx + 1;
 			tags += `
-      <li>
+      <li class='item'>
         <div class='gallery_item'>
           <span class='gallery_item__num'>${num}</span>
           <p class='gallery_item__pic'>
@@ -40,7 +40,7 @@ fetch(url_user)
 			el.onload = () => {
 				count++;
 
-				// 		count === imgs.length && isoLayout();
+				count === imgs.length && isoLayout();
 			};
 		}
 	});
@@ -54,13 +54,14 @@ document.body.addEventListener('click', (e) => {
 	if (e.target.className === 'close') removePop();
 });
 
-// function isoLayout() {
-// 	new Isotope(wrap, {
-// 		itemSelector: '.item',
-// 		transitionDuration: '0.5s',
-// 	});
-// 	wrap.classList.add('on');
-// }
+function isoLayout() {
+	new Isotope(wrap, {
+		itemSelector: '.item',
+		transitionDuration: '0.5s',
+	});
+	wrap.classList.add('on');
+	loading.classList.add('off');
+}
 
 function createPop(imgSrc) {
 	const tags = `
