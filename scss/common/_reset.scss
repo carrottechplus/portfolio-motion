@@ -37,3 +37,14 @@ body {
 	font-family: 'Arial', sans-serif;
 	word-break: break-word;
 }
+
+fieldset {
+	border: none;
+}
+table {
+	border-collapse: collapse;
+}
+input,
+label {
+	vertical-align: middle;
+}

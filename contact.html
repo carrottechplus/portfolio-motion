@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/2ffeb95e18.js" crossorigin="anonymous"></script>
+  <script defer src="js/time.js"></script>
+  <script defer src="js/form.js"></script>
+  <title>MOTION portfolio</title>
+</head>
+
+<body>
+  <header id="header">
+    <div class="header_wrap">
+      <h1 class="logo"><a href="index.html">PaperTiger</a></h1>
+      <nav id="nav">
+        <ul class="gnb">
+          <li><a href="members.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="youtube.html">Video</a></li>
+        </ul>
+      </nav>
+      <div class="nav_side">
+        <a href="#" class="nav_side_btn">CONTACT US</a>
+      </div>
+
+      <a href="#" class="btn_menu">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </a>
+    </div>
+  </header>
+  <section class="sub_wrap">
+    <div class="contact_wrap">
+      <div class="inner">
+        <div class="head_title">LET'S WORK</div>
+        <div class="contact_form">
+          <form action="result.html" method="get" id="member">
+            <fieldset>
+              <legend class="text_hidden">회원가입 폼 입력항목</legend>
+              <table>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <label for="userid">User ID</label>
+                    </th>
+                    <td>
+                      <input type="text" name="userid" id="userid" placeholder="아이디를 입력하세요.">
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">
+                      <label for="pwd1">Password</label>
+                    </th>
+                    <td>
+                      <input type="password" name="pwd1" id="pwd1" placeholder="비밀번호를 입력하세요.">
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <label for="pwd2">Re Password</label>
+                    </th>
+                    <td>
+                      <input type="password" name="pwd2" id="pwd2" placeholder="비밀번호를 재 입력하세요.">
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th><label for="email">E-mail</label></th>
+                    <td>
+                      <input type="email" name="email" id="email" placeholder="이메일 주소를 입력하세요."></input>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th scrope="row">
+                      <label for="edu">Education</label>
+                    </th>
+                    <td>
+                      <select name="edu" id="edu">
+                        <option value="">최종학력을 선택해주세요</option>
+                        <option value="elementary school">초등학교 졸업</option>
+                        <option value="middle school">중학교 졸업</option>
+                        <option value="high school">고등학교 졸업</option>
+                        <option value="college">대학교 졸업</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">
+                      Gender
+                    </th>
+                    <td>
+                      <input type="radio" name="gender" id="male" value="male">
+                      <label for="male">Male</label>
+
+                      <input type="radio" name="gender" id="female" value="female">
+                      <label for="female">Female</label>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">
+                      Agency Shopping <span class="small">Please check all that apply</span>
+                    </th>
+                    <td>
+                      <input type="checkbox" name="hobby" id="sports" value="sports">
+                      <label for="sports">Still researching</label>
+
+                      <input type="checkbox" name="hobby" id="music" value="music">
+                      <label for="music">Ready to go</label>
+
+                      <input type="checkbox" name="hobby" id="game" value="game">
+                      <label for="game">I have a Brief/RFP</label>
+
+                      <input type="checkbox" name="hobby" id="reading" value="reading">
+                      <label for="reading">I know my budget</label>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th><label for="'comments">Comments</label></th>
+                    <td>
+                      <textarea name="comments" id="comments" cols="30" rows="4" placeholder="남기는 글을 입력하세요."></textarea>
+                    </td>
+                  </tr>
+
+                  <tr class="form_btn">
+                    <th colspan="2">
+                      <input type="reset" value="Cancel">
+                      <input type="submit" value="Submit">
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="inner footer_wrap">
+      <div class="footer_top">
+        <div class="footer_top__clock">
+          <div class="clock">
+            <span class="country">SE</span>
+            <div class="clock_text">
+              <span class="clock_realtime">0</span>
+              <span class="clock_dot"> :</span>
+              <span class="clock_realtime">0</span>
+              <span class="clock_dot"> :</span>
+              <span class="clock_realtime">0</span>
+              <span class="clock_dl on">AM</span>
+              <span class="clock_dl">PM</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer_top__content">
+          <ul class="footer_sns">
+            <li><a href="#"><i class="fa-brands fa-twitter"></i><span class="text_hidden">facebook</span></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i><span class="text_hidden">instagram</span></a></li>
+            <li><a href="#"><i class="fa-regular fa-envelope"></i><span class="text_hidden">mail</span></a></li>
+            <li>
+              <a href="#"><i class="fa-solid fa-share-nodes"></i><span class="text_hidden">share</span></a>
+            </li>
+          </ul>
+          <div class="footer_desc">
+            <address>110, Sejong-daero, Jung-gu, Seoul, Republic of Korea</address>
+            <p class="footer_copy">
+              Family owned and operated since 2008. All rights reserved. &copy; 2023 Paper Tiger
+            </p>
+          </div>
+        </div>
+        <a href="#" class="footer_top__btn btn_totop">Back to top</a>
+      </div>
+      <div class="footer_bottom">
+        <h1 class="logo"><a href="index.html">PaperTiger</a></h1>
+        <ul class="gnb">
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="youtube.html">Video</a></li>
+        </ul>
+        <div class="nav_side">
+          <a href="#" class="nav_side_btn btn_round"><span>CONTACT US</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
