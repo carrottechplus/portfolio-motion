@@ -3,6 +3,7 @@ const key = 'AIzaSyC4TpEbx2d9lOtjiVQIg3b6wA6ZKKrDL7c';
 const list = 'PLQZTVbf9_qAn_Nwrz2maZG64AaEBcFZfb';
 const num = 10;
 const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`;
+
 document.body.addEventListener('click', (e) => {
 	// e.preventDefault();
 	console.log(e.target.className === 'gallery_item');

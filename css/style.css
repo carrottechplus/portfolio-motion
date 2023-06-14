@@ -1193,6 +1193,52 @@ label {
 
 .sub_wrap .gallery_wrap {
   padding: 0 5%;
+  position: relative;
+  width: 100%;
+}
+.sub_wrap .gallery_wrap .searchBox {
+  width: 100%;
+  padding: 50px 10px 20px;
+  font-size: 0;
+}
+.sub_wrap .gallery_wrap .searchBox input {
+  width: 300px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding-left: 10px;
+}
+.sub_wrap .gallery_wrap .searchBox .btnSearch {
+  width: 80px;
+  height: 29px;
+  margin-left: 10px;
+  background: #333;
+  color: #fff;
+  font: bold 12px/29px "arial";
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+  transform: translateY(-1px);
+}
+.sub_wrap .gallery_wrap .loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: 100;
+}
+.sub_wrap .gallery_wrap .loading.off {
+  opacity: 0;
+  z-index: -1;
+}
+.sub_wrap .gallery_wrap .loading img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .sub_wrap .gallery_wrap .gallery_list {
   margin-top: 100px;
@@ -1229,12 +1275,6 @@ label {
   font-weight: 400;
   line-height: 1.22;
 }
-.sub_wrap .gallery_wrap .gallery_list .gallery_item__title {
-  width: auto;
-  margin-top: 14px;
-  font-size: 20px;
-  line-height: 1.22;
-}
 .sub_wrap .gallery_wrap .gallery_list .gallery_item__pic {
   position: relative;
   overflow: hidden;
@@ -1248,6 +1288,46 @@ label {
   width: 100%;
   height: auto;
   transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile {
+  position: relative;
+  margin-top: -25px;
+  z-index: 2;
+  background: #101010;
+  text-align: center;
+}
+.sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile__img {
+  overflow: hidden;
+  display: block;
+  width: 70px;
+  height: 70px;
+  padding: 2px;
+  position: relative;
+  z-index: 3;
+  background: #fff;
+  border-radius: 100%;
+}
+.sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile__img img {
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile__title {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.22;
+  color: #f0f0f0;
+}
+.sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile__name {
+  font-size: 15px;
+  line-height: 1.22;
+  color: #f0f0f0;
 }
 @media screen and (max-width: 639px) {
   .sub_wrap .gallery_wrap .gallery_list {
