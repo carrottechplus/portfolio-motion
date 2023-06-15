@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:wght@400&family=Public+Sans@500;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +37,7 @@ body {
   background: #f0f0f0;
   min-width: 320px;
   font-size: 16px;
-  font-family: "Arial", sans-serif;
+  font-family: "arial", sans-serif;
   word-break: break-word;
 }
 
@@ -78,7 +78,7 @@ label {
 }
 
 .logo a {
-  font: bold 26px/1 "arial";
+  font: bold 26px/1 "sans-serif";
   letter-spacing: -1px;
 }
 
@@ -102,6 +102,7 @@ label {
   color: #080808;
   font-weight: 500;
   font-size: 20px;
+  font-family: "Open sans", sans-serif;
   line-height: 33px;
 }
 .gnb li a::before {
@@ -141,7 +142,7 @@ label {
   display: inline-block;
   width: auto;
   height: auto;
-  font: 500 18px/1 "arial";
+  font: 500 18px/1 "Ubuntu", sans-serif;
   z-index: 2;
 }
 .btn_round span:after {
@@ -222,7 +223,7 @@ label {
   display: inline-block;
   width: auto;
   height: 33px;
-  font: 500 18px/33px "arial";
+  font: 500 18px/33px "Ubuntu", sans-serif;
   padding: 0 30px;
   transition: all 0.3s ease-in-out;
 }
@@ -294,6 +295,7 @@ label {
   position: relative;
   padding-bottom: 2px;
   font-size: 20px;
+  font-family: "Ubuntu", sans-serif;
 }
 .footer_wrap .footer_top .btn_totop::before {
   content: "";
@@ -318,14 +320,15 @@ label {
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 1px;
+  font-family: "Ubuntu", sans-serif;
 }
 .footer_wrap .footer_top__clock .clock_text {
   display: flex;
   margin-top: 10px;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: 3px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 .footer_wrap .footer_top__clock .clock_text .clock_dot {
   animation: blink 1s step-end infinite;
@@ -477,7 +480,7 @@ label {
   object-fit: contain;
 }
 .pop .close {
-  font: bold 14px/1 "arial";
+  font: bold 14px/1 "Ubuntu", sans-serif;
   color: #fff;
   position: absolute;
   top: 30px;
@@ -486,7 +489,7 @@ label {
 }
 
 .main_wrap .intro_wrap {
-  padding: 0 5%;
+  padding: 0 10vw;
 }
 .main_wrap .intro_wrap .intro_head_wrap {
   display: flex;
@@ -584,7 +587,7 @@ label {
 }
 
 .main_wrap .work_wrap {
-  padding: 0 5%;
+  padding: 0 10vw;
 }
 .main_wrap .work_wrap .inner {
   padding-top: 70px;
@@ -704,7 +707,7 @@ label {
 }
 
 .main_wrap .news_wrap {
-  padding: 0 5%;
+  padding: 0 10vw;
   margin-top: 10vw;
 }
 .main_wrap .news_wrap .inner {
@@ -792,7 +795,7 @@ label {
 .main_wrap .gallery_wrap {
   margin-top: 10vw;
   margin-bottom: 130px;
-  padding: 0 5%;
+  padding: 0 10vw;
 }
 .main_wrap .gallery_wrap .inner {
   padding-top: 65px;
@@ -946,7 +949,7 @@ label {
 .main_wrap .about_wrap {
   margin-top: 10vw;
   margin-bottom: 10vw;
-  padding: 0 5%;
+  padding: 0 10vw;
 }
 .main_wrap .about_wrap .inner {
   display: flex;
@@ -1017,7 +1020,7 @@ label {
 }
 
 .sub_wrap .members_wrap {
-  padding: 0 5%;
+  padding: 0 10vw;
 }
 .sub_wrap .members_wrap .head_title, .sub_wrap .members_wrap .head_title *, .head_title .sub_wrap .members_wrap * {
   letter-spacing: 5px;
@@ -1192,33 +1195,56 @@ label {
 }
 
 .sub_wrap .gallery_wrap {
-  padding: 0 5%;
+  padding: 0 10vw;
   position: relative;
   width: 100%;
 }
+.sub_wrap .gallery_wrap .sub_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 .sub_wrap .gallery_wrap .searchBox {
-  width: 100%;
-  padding: 50px 10px 20px;
+  position: relative;
+  width: 40%;
+  height: 60px;
+  margin: 0 10px 5px 0;
+  padding: 5px 20px;
   font-size: 0;
+  border: 2px solid #555;
+  border-radius: 60px;
+  background: #fff;
+  box-shadow: 5px 5px 20px rgba(200, 200, 200, 0.3);
 }
 .sub_wrap .gallery_wrap .searchBox input {
-  width: 300px;
-  height: 30px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
   padding-left: 10px;
+  padding-right: 50px;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+.sub_wrap .gallery_wrap .searchBox input:focus, .sub_wrap .gallery_wrap .searchBox input:focus-visible {
+  border: 0 !important;
 }
 .sub_wrap .gallery_wrap .searchBox .btnSearch {
-  width: 80px;
-  height: 29px;
-  margin-left: 10px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 50px;
+  height: 50px;
   background: #333;
-  color: #fff;
-  font: bold 12px/29px "arial";
+  border-radius: 50px;
   text-align: center;
   border: 0;
   cursor: pointer;
   transform: translateY(-1px);
+}
+.sub_wrap .gallery_wrap .searchBox .btnSearch i {
+  color: #fff;
+  font-size: 20px;
 }
 .sub_wrap .gallery_wrap .loading {
   position: fixed;
@@ -1257,6 +1283,7 @@ label {
   padding: 0 8px;
 }
 .sub_wrap .gallery_wrap .gallery_list .gallery_item {
+  overflow: hidden;
   display: block;
   width: 100%;
   height: 100%;
@@ -1281,7 +1308,6 @@ label {
   width: 100%;
   margin-top: 32px;
   background-color: #d8d8d8;
-  border-radius: 0.25em;
   line-height: 0;
 }
 .sub_wrap .gallery_wrap .gallery_list .gallery_item__pic img {
@@ -1291,15 +1317,10 @@ label {
 }
 .sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile {
   position: relative;
-  margin-top: -25px;
+  background: #333;
   z-index: 2;
-  background: #101010;
   text-align: center;
-}
-.sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile::after {
-  content: "";
-  display: block;
-  clear: both;
+  transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
 }
 .sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile__img {
   overflow: hidden;
@@ -1307,9 +1328,12 @@ label {
   width: 70px;
   height: 70px;
   padding: 2px;
-  position: relative;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 3;
-  background: #fff;
+  background: #080808;
   border-radius: 100%;
 }
 .sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile__img img {
@@ -1318,16 +1342,15 @@ label {
   height: 100%;
   object-fit: cover;
 }
-.sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile__title {
-  margin-top: 14px;
-  font-size: 15px;
-  line-height: 1.22;
+.sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile__title, .sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile__name {
   color: #f0f0f0;
+  opacity: 0;
 }
-.sub_wrap .gallery_wrap .gallery_list .gallery_item .gallery_profile__name {
-  font-size: 15px;
-  line-height: 1.22;
-  color: #f0f0f0;
+.sub_wrap .gallery_wrap .gallery_list .gallery_item:hover .gallery_profile {
+  height: 100px;
+}
+.sub_wrap .gallery_wrap .gallery_list .gallery_item:hover .gallery_profile__title, .sub_wrap .gallery_wrap .gallery_list .gallery_item:hover .gallery_profile__name {
+  opacity: 1;
 }
 @media screen and (max-width: 639px) {
   .sub_wrap .gallery_wrap .gallery_list {
@@ -1367,7 +1390,7 @@ label {
 }
 
 .sub_wrap .youtube_wrap {
-  padding: 0 5%;
+  padding: 0 10vw;
 }
 .sub_wrap .youtube_wrap .sub_head {
   display: flex;
@@ -1451,7 +1474,7 @@ label {
   height: 100px;
   font-size: 24px;
   font-weight: 500;
-  font-family: "arial";
+  font-family: "Ubuntu", sans-serif;
   line-height: 1.4;
   color: #333;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -1461,7 +1484,7 @@ label {
   margin-top: 1vw;
   font-size: 15px;
   font-weight: 400;
-  font-family: "arial";
+  font-family: "Ubuntu", sans-serif;
   line-height: 1.5;
   color: #333;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -1477,7 +1500,7 @@ label {
   font-size: 14px;
   line-height: 1.4;
   color: gray;
-  font-family: "arial";
+  font-family: "Ubuntu", sans-serif;
 }
 @media screen and (max-width: 639px) {
   .sub_wrap .youtube_wrap .gallery_list {
@@ -1501,7 +1524,7 @@ label {
 
 .contact_wrap .inner {
   display: flex;
-  padding: 0 5%;
+  padding: 0 10vw;
 }
 .contact_wrap .inner .head_title, .contact_wrap .inner .head_title *, .head_title .contact_wrap .inner * {
   width: 50%;

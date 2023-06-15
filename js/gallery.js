@@ -3,20 +3,30 @@ const loading = document.querySelector('.gallery_wrap .loading');
 const api_key = '6c70577e2661042cd0ab587b17f6c944';
 const myID = '198484213@N03';
 const num = 50;
+const searchInput = document.querySelector('.gallery_wrap #search');
+const searchBtn = document.querySelector('.gallery_wrap .searchBtn');
 
 const baseURL = `https://www.flickr.com/services/rest/?format=json&nojsoncallback=1&api_key=${api_key}&per_page=${num}&method=`;
 const method_interest = 'flickr.interestingness.getList';
 const method_user = 'flickr.people.getPhotos';
+const method_search = 'flickr.photos.search';
 
 const url_interest = `${baseURL}${method_interest}`;
 const url_user = `${baseURL}${method_user}&user_id=${myID}`;
 
-// fetch(url_interest)
-// 	.then((res) => res.json())
-// 	.then((json) => {
-// 		// loading.classList.remove('off');
-// 	});
 fetchData(url_interest);
+
+searchBtn.addEventListener('click', (e) => {
+	e.preventDefault();
+
+	const value = searchInput.value;
+	const url_search = `${baseURL}${method_search}&tags=${value}`;
+
+	loading.classList.remove('off');
+	wrap.classList.remove('on'); //Isotope
+
+	fetchData(url_search);
+});
 
 async function fetchData(url) {
 	const res = await fetch(url);

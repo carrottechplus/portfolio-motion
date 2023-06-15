@@ -1,32 +1,58 @@
 .sub_wrap {
 	.gallery_wrap {
-		padding: 0 5%;
+		padding: 0 10vw;
 		position: relative;
 		width: 100%;
 
+		.sub_head {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+
 		.searchBox {
-			width: 100%;
-			padding: 50px 10px 20px;
+			position: relative;
+			width: 40%;
+			height: 60px;
+			margin: 0 10px 5px 0;
+			padding: 5px 20px;
 			font-size: 0;
+			border: 2px solid #555;
+			border-radius: 60px;
+			background: #fff;
+			box-shadow: 5px 5px 20px rgba(200, 200, 200, 0.3);
 
 			input {
-				width: 300px;
-				height: 30px;
-				background-color: #fff;
-				border: 1px solid #ddd;
+				width: 100%;
+				height: 100%;
+				background-color: transparent;
+				border: none;
 				padding-left: 10px;
+				padding-right: 50px;
+				font-size: 18px;
+				font-family: sans-serif;
+
+				&:focus,
+				&:focus-visible {
+					border: 0 !important;
+				}
 			}
 			.btnSearch {
-				width: 80px;
-				height: 29px;
-				margin-left: 10px;
+				position: absolute;
+				top: 4px;
+				right: 4px;
+				width: 50px;
+				height: 50px;
 				background: #333;
-				color: #fff;
-				font: bold 12px/29px 'arial';
+				border-radius: 50px;
 				text-align: center;
 				border: 0;
 				cursor: pointer;
 				transform: translateY(-1px);
+				i {
+					color: #fff;
+					font-size: 20px;
+				}
 			}
 		}
 
@@ -72,6 +98,7 @@
 				padding: 0 8px;
 			}
 			.gallery_item {
+				overflow: hidden;
 				display: block;
 				width: 100%;
 				height: 100%;
@@ -97,7 +124,6 @@
 					width: 100%;
 					margin-top: 32px;
 					background-color: #d8d8d8;
-					border-radius: 0.25em;
 					line-height: 0;
 
 					img {
@@ -109,25 +135,23 @@
 
 				.gallery_profile {
 					position: relative;
-					margin-top: -25px;
+					background: #333;
 					z-index: 2;
-					background: #101010;
 					text-align: center;
+					transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
 
-					&::after {
-						content: '';
-						display: block;
-						clear: both;
-					}
 					&__img {
 						overflow: hidden;
 						display: block;
 						width: 70px;
 						height: 70px;
 						padding: 2px;
-						position: relative;
+						position: absolute;
+						top: -35px;
+						left: 50%;
+						transform: translateX(-50%);
 						z-index: 3;
-						background: #fff;
+						background: $primary-color;
 						border-radius: 100%;
 
 						img {
@@ -137,16 +161,17 @@
 							object-fit: cover;
 						}
 					}
-					&__title {
-						margin-top: 14px;
-						font-size: 15px;
-						line-height: 1.22;
-						color: #f0f0f0;
-					}
+					&__title,
 					&__name {
-						font-size: 15px;
-						line-height: 1.22;
 						color: #f0f0f0;
+						opacity: 0;
+					}
+				}
+				&:hover .gallery_profile {
+					height: 100px;
+					&__title,
+					&__name {
+						opacity: 1;
 					}
 				}
 			}

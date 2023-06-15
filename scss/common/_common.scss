@@ -14,9 +14,9 @@ $light-blue: #bfedd9;
 
 // @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@800;900&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:wght@400&family=Public+Sans@500;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
 
 .text_hidden {
 	position: absolute;
@@ -46,7 +46,7 @@ $light-blue: #bfedd9;
 
 .logo {
 	a {
-		font: bold 26px/1 'arial';
+		font: bold 26px/1 'sans-serif';
 		letter-spacing: -1px;
 	}
 }
@@ -69,6 +69,7 @@ $light-blue: #bfedd9;
 			color: $primary-color;
 			font-weight: 500;
 			font-size: 20px;
+			font-family: 'Open sans', sans-serif;
 			line-height: 33px;
 
 			&::before {
@@ -115,7 +116,7 @@ $light-blue: #bfedd9;
 		display: inline-block;
 		width: auto;
 		height: auto;
-		font: 500 18px/1 'arial';
+		font: 500 18px/1 'Ubuntu', sans-serif;
 		z-index: 2;
 
 		&:after {
