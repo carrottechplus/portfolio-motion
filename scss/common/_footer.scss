@@ -17,7 +17,7 @@
 			position: relative;
 			padding-bottom: 2px;
 			font-size: 20px;
-			font-family: 'Ubuntu', sans-serif;
+			font-family: 'Verdana', sans-serif;
 
 			&::before {
 				content: '';
@@ -45,7 +45,7 @@
 				font-size: 20px;
 				font-weight: 500;
 				letter-spacing: 1px;
-				font-family: 'Ubuntu', sans-serif;
+				font-family: 'Verdana', sans-serif;
 			}
 			.clock_text {
 				display: flex;
@@ -53,7 +53,7 @@
 				font-size: 20px;
 				font-weight: 300;
 				letter-spacing: 3px;
-				font-family: 'Ubuntu', sans-serif;
+				font-family: 'Verdana', sans-serif;
 
 				.clock_dot {
 					animation: blink 1s step-end infinite;
@@ -132,9 +132,11 @@
 		.nav_side_btn {
 			border: 2px solid white;
 			height: 47px;
+			margin: 0;
 			line-height: 43px;
+
 			span {
-				font-size: 2em;
+				font-size: 30px;
 			}
 			&:hover {
 				border-color: $orange;
@@ -193,6 +195,14 @@
 			justify-content: space-between;
 			.gnb {
 				display: none;
+			}
+			.nav_side_btn {
+				height: 36px;
+				line-height: 32px;
+				margin: 0;
+				span {
+					font-size: 1rem;
+				}
 			}
 		}
 	}

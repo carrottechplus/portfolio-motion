@@ -20,7 +20,7 @@
 		display: inline-block;
 		width: auto;
 		height: 33px;
-		font: 500 18px/33px 'Ubuntu', sans-serif;
+		font: 500 18px/33px Verdana, Tahoma, sans-serif;
 		padding: 0 30px;
 		transition: all 0.3s ease-in-out;
 
@@ -79,4 +79,9 @@
 	}
 }
 @media screen and (max-width: $mobile) {
+	.header_wrap {
+		.nav_side_btn {
+			padding: 0 10px;
+		}
+	}
 }

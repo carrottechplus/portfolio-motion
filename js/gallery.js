@@ -5,35 +5,82 @@ const myID = '198484213@N03';
 const num = 50;
 const searchInput = document.querySelector('.gallery_wrap #search');
 const searchBtn = document.querySelector('.gallery_wrap .searchBtn');
+const btnInterest = document.querySelector('.gallery_wrap .btnInterest');
+const btnMine = document.querySelector('.gallery_wrap .btnMine');
 
-const baseURL = `https://www.flickr.com/services/rest/?format=json&nojsoncallback=1&api_key=${api_key}&per_page=${num}&method=`;
-const method_interest = 'flickr.interestingness.getList';
-const method_user = 'flickr.people.getPhotos';
-const method_search = 'flickr.photos.search';
-
-const url_interest = `${baseURL}${method_interest}`;
-const url_user = `${baseURL}${method_user}&user_id=${myID}`;
-
-fetchData(url_interest);
+btnInterest.classList.add('on');
+fetchData(setURL('interest'));
 
 searchBtn.addEventListener('click', (e) => {
-	e.preventDefault();
+	// e.preventDefault();
+	getSearch();
+});
 
-	const value = searchInput.value;
-	const url_search = `${baseURL}${method_search}&tags=${value}`;
+searchInput.addEventListener('keypress', (e) => e.code === 'Enter' && getSearch());
 
+wrap.addEventListener('click', (e) => {
+	if (e.target.className === 'gallery_profile__id') {
+		menuActive();
+		fetchData(setURL('user', e.target.innerText));
+	}
+
+	// if (e.target.className === 'thumb') createPop(e.target.getAttribute('alt'));
+});
+
+btnInterest.addEventListener('click', () => {
+	menuActive();
+	btnInterest.classList.add('on');
+	fetchData(setURL('interest'));
+});
+btnMine.addEventListener('click', () => {
+	menuActive();
+	btnMine.classList.add('on');
+	fetchData(setURL('user', myID));
+});
+
+function getSearch() {
+	const value = searchInput.value.trim();
+	searchInput.value = '';
+	if (value === '') {
+		return alert('검색어를 입력해 주세요.');
+	}
+	menuActive();
+
+	fetchData(setURL('search', value));
+}
+
+function menuActive(el) {
+	document.querySelectorAll('.gallery_wrap button').forEach((el) => {
+		if (el.classList.contains('on')) {
+			el.classList.remove('on');
+		}
+	});
+}
+
+function setURL(type, opt) {
+	const baseURL = `https://www.flickr.com/services/rest/?format=json&nojsoncallback=1&api_key=${api_key}&per_page=${num}&method=`;
+	const method_interest = 'flickr.interestingness.getList';
+	const method_user = 'flickr.people.getPhotos';
+	const method_search = 'flickr.photos.search';
+
+	if (type === 'interest') return `${baseURL}${method_interest}`;
+	if (type === 'search') return `${baseURL}${method_search}&tags=${opt}`;
+	if (type === 'user') return `${baseURL}${method_user}&user_id=${opt}`;
+}
+
+async function fetchData(url) {
 	loading.classList.remove('off');
 	wrap.classList.remove('on'); //Isotope
 
-	fetchData(url_search);
-});
-
-async function fetchData(url) {
 	const res = await fetch(url);
 	const json = await res.json();
 	const items = json.photos.photo;
 	// console.log(items);
-
+	if (items.length === 0) {
+		loading.classList.add('off');
+		wrap.classList.add('on');
+		return alert('검색 결과가 없습니다.');
+	}
 	createList(items);
 }
 
@@ -51,8 +98,8 @@ function createList(arr) {
 				</p>
 				<div class='gallery_item__profile gallery_profile'>	
 					<p class='gallery_profile__img'><img src='http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg' /></p>
+					<span class='gallery_profile__id'>${item.owner}</span>
 					<p class='gallery_profile__title'>${item.title === '' ? 'Have a good day !' : item.title}</p>
-					<span class='gallery_profile__name'>${item.owner}</span>
 				</div>
 			</div>
 		</li>
@@ -108,6 +155,7 @@ function createPop(imgSrc) {
 	aside.className = 'pop';
 	aside.innerHTML = tags;
 	document.body.append(aside);
+
 	setTimeout(() => document.querySelector('.pop').classList.add('on'), 0);
 	document.body.style.overflow = 'hidden';
 }

@@ -17,6 +17,7 @@ $light-blue: #bfedd9;
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:wght@400&family=Public+Sans@500;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+@import url('https://fonts.cdnfonts.com/css/verdana');
 
 .text_hidden {
 	position: absolute;
@@ -69,7 +70,7 @@ $light-blue: #bfedd9;
 			color: $primary-color;
 			font-weight: 500;
 			font-size: 20px;
-			font-family: 'Open sans', sans-serif;
+			font-family: 'Verdana', sans-serif;
 			line-height: 33px;
 
 			&::before {
@@ -116,7 +117,7 @@ $light-blue: #bfedd9;
 		display: inline-block;
 		width: auto;
 		height: auto;
-		font: 500 18px/1 'Ubuntu', sans-serif;
+		font: 500 18px/1 'Verdana', sans-serif;
 		z-index: 2;
 
 		&:after {
@@ -166,6 +167,7 @@ $light-blue: #bfedd9;
 	padding-top: 160px;
 }
 .sub_wrap {
+	padding-bottom: 120px;
 	color: $secondary-color;
 }
 
