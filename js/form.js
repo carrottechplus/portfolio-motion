@@ -2,12 +2,12 @@ const form = document.querySelector('#member');
 const btnSubmit = form.querySelector('input[type=submit]');
 
 btnSubmit.addEventListener('click', (e) => {
-	if (!isTxt('userid', 5)) e.preventDefault();
+	if (!isTxt('userName', 5)) e.preventDefault();
 	if (!isPwd('pwd1', 'pwd2', 4)) e.preventDefault();
 	if (!isEmail('email', 6)) e.preventDefault();
 	if (!isCheck('gender')) e.preventDefault();
 	if (!isCheck('hobby')) e.preventDefault();
-	if (!isSelect('edu')) e.preventDefault();
+	if (!isSelect('pos')) e.preventDefault();
 });
 
 function isTxt(name, len) {
