@@ -1,3 +1,4 @@
+$video-wd: 450px;
 .sub_wrap {
 	.youtube_wrap {
 		padding: 0 10vw;
@@ -32,12 +33,12 @@
 					&__img {
 						position: relative;
 						overflow: hidden;
-						width: 600px;
+						width: $video-wd;
 						height: 0;
 						z-index: 1;
 						background-color: gray;
 						border-radius: 0.25em;
-						padding-top: calc(600px / 16 * 9);
+						padding-top: calc($video-wd / 16 * 9);
 						transition: 0.2s;
 
 						&::before {
@@ -139,6 +140,22 @@
 	}
 
 	@media screen and (max-width: $tablet) {
+		$video-wd: 40%;
+		.youtube_wrap {
+			padding: 0 5%;
+
+			.sub_head {
+				justify-content: space-between;
+			}
+			.gallery_list {
+				li {
+					.gallery_item__img {
+						width: $video-wd;
+						padding-top: calc($video-wd / 16 * 9);
+					}
+				}
+			}
+		}
 	}
 
 	@media screen and (max-width: $mobile) {
@@ -165,7 +182,7 @@
 				li {
 					.gallery_item {
 						display: block;
-						padding: 4vw 1vw;
+						padding: 4vw 2vw;
 
 						&__img {
 							width: 100%;

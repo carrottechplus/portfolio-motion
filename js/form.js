@@ -1,6 +1,10 @@
 const form = document.querySelector('#member');
 const btnSubmit = form.querySelector('input[type=submit]');
 
+setTimeout(() => {
+	document.querySelector('.pic').classList.add('on');
+}, 1000);
+
 btnSubmit.addEventListener('click', (e) => {
 	if (!isTxt('userName', 5)) e.preventDefault();
 	if (!isPwd('pwd1', 'pwd2', 4)) e.preventDefault();

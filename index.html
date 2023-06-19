@@ -397,14 +397,29 @@
       setTimeout(() => prev.classList.remove('on'), 500);
     });
 
-    const intro_visual = document.querySelector('.intro_visual');
-    const scroll = window.scrollY;
-    console.log(intro_visual.offsetTop);
-    console.log(scroll);
-    if (scroll == intro_visual.offsetTop) {
-      console.log('!!!');
-    }
+    window.addEventListener('scroll', () => {
+      const intro_visual = document.querySelector('.intro_visual');
+      let scrollLocation = document.documentElement.scrollTop;
 
+      const scroll = window.scrollY;
+      let scroll2 = scroll - intro_visual.offsetTop;
+
+      if (scrollLocation >= intro_visual.offsetTop) {
+        intro_visual.classList.add('now');
+        // intro_visual.style.height = scroll2 + 'px';
+      } else {
+        intro_visual.classList.remove('now');
+      }
+    })
+    // window.addEventListener('scroll', () => {
+    //   let scrollLocation = document.documentElement.scrollTop; // 현재 스크롤바 위치
+    //   let windowHeight = window.innerHeight; // 스크린 창
+    //   let fullHeight = document.body.scrollHeight; //  margin 값은 포함 x
+
+    //   if (scrollLocation + windowHeight >= fullHeight) {
+    //     console.log('끝')
+    //   }
+    // })
   </script>
 </body>
 

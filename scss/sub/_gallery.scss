@@ -1,3 +1,5 @@
+$gap: 30px;
+
 .sub_wrap {
 	.gallery_wrap {
 		padding: 0 10vw;
@@ -146,8 +148,8 @@
 		}
 
 		.gallery_list {
-			width: calc(100% + 20px);
-			margin-left: -20px;
+			width: calc(100% + $gap);
+			margin-left: -$gap;
 			padding-bottom: 120px;
 
 			&::after {
@@ -158,10 +160,10 @@
 
 			li {
 				float: left;
-				width: calc(25% - 20px);
+				width: calc(33.333% - $gap);
 				// border-left: 1px solid $primary-color;
-				padding: 20px 0 0;
-				margin-left: 20px;
+				padding: $gap 0 0;
+				margin-left: $gap;
 			}
 			.gallery_item {
 				overflow: hidden;

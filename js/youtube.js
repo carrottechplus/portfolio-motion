@@ -56,7 +56,7 @@ function createList(json) {
 						</div>
 						<div class='gallery_item__side gallery_side'>
             <h2 class='gallery_side__title'>${title.length > 70 ? title.substr(0, 90) + '...' : title}</h2>
-            <p class='gallery_side__desc'>${desc.length > 300 ? desc.substr(0, 300) + '...' : desc}</p>
+            <p class='gallery_side__desc'>${desc.length > 200 ? desc.substr(0, 200) + '...' : desc}</p>
             
             <div class='gallery_side__info gallery_info'>
               <span class='gallery_info__name'>${name}</span>

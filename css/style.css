@@ -1030,6 +1030,14 @@ label {
   width: 100%;
   height: 100%;
   padding: 0;
+  z-index: 3;
+  transform: scale(2);
+}
+.main_wrap .about_wrap .about_img_wrap p:nth-of-type(2) {
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
   z-index: 4;
   transform: scale(1);
 }
@@ -1476,8 +1484,8 @@ label {
   transform: translateX(180px);
 }
 .sub_wrap .gallery_wrap .gallery_list {
-  width: calc(100% + 20px);
-  margin-left: -20px;
+  width: calc(100% + 30px);
+  margin-left: -30px;
   padding-bottom: 120px;
 }
 .sub_wrap .gallery_wrap .gallery_list::after {
@@ -1487,9 +1495,9 @@ label {
 }
 .sub_wrap .gallery_wrap .gallery_list li {
   float: left;
-  width: calc(25% - 20px);
-  padding: 20px 0 0;
-  margin-left: 20px;
+  width: calc(33.333% - 30px);
+  padding: 30px 0 0;
+  margin-left: 30px;
 }
 .sub_wrap .gallery_wrap .gallery_list .gallery_item {
   overflow: hidden;
@@ -1667,12 +1675,12 @@ label {
 .sub_wrap .youtube_wrap .gallery_list li .gallery_item__img {
   position: relative;
   overflow: hidden;
-  width: 600px;
+  width: 450px;
   height: 0;
   z-index: 1;
   background-color: gray;
   border-radius: 0.25em;
-  padding-top: 337.5px;
+  padding-top: 253.125px;
   transition: 0.2s;
 }
 .sub_wrap .youtube_wrap .gallery_list li .gallery_item__img::before {
@@ -1747,6 +1755,18 @@ label {
   color: gray;
   font-family: "Verdana", sans-serif;
 }
+@media screen and (max-width: 979px) {
+  .sub_wrap .youtube_wrap {
+    padding: 0 5%;
+  }
+  .sub_wrap .youtube_wrap .sub_head {
+    justify-content: space-between;
+  }
+  .sub_wrap .youtube_wrap .gallery_list li .gallery_item__img {
+    width: 40%;
+    padding-top: 22.5%;
+  }
+}
 @media screen and (max-width: 639px) {
   .sub_wrap .youtube_wrap .gallery_list {
     padding-top: 50px;
@@ -1754,7 +1774,7 @@ label {
   }
   .sub_wrap .youtube_wrap .gallery_list li .gallery_item {
     display: block;
-    padding: 4vw 1vw;
+    padding: 4vw 2vw;
   }
   .sub_wrap .youtube_wrap .gallery_list li .gallery_item__img {
     width: 100%;
@@ -1785,8 +1805,16 @@ label {
 .contact_wrap .inner .contact_head .pic {
   overflow: hidden;
   border-radius: 0.25em;
-  margin: 30px 0;
   width: 70%;
+  height: 0;
+  opacity: 0;
+}
+.contact_wrap .inner .contact_head .pic.on {
+  height: 200px;
+  margin: 30px 0;
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.6s cubic-bezier(0.26, 0.3, 0.98, 0.59);
 }
 .contact_wrap .inner .contact_head .pic img {
   object-fit: cover;
