@@ -76,6 +76,14 @@
 			width: 100%;
 			height: 100%;
 			padding: 0;
+			z-index: 3;
+			transform: scale(2);
+		}
+		.about_img_wrap p:nth-of-type(2) {
+			left: 0;
+			width: 100%;
+			height: 100%;
+			padding: 0;
 			z-index: 4;
 			transform: scale(1);
 		}

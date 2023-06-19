@@ -19,7 +19,7 @@
         <ul class="gnb">
           <li><a href="members.html">About</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="#">Services</a></li>
+          <li><a href="location.html">Location</a></li>
           <li><a href="#">Careers</a></li>
           <li><a href="youtube.html">Video</a></li>
         </ul>
@@ -297,8 +297,8 @@
           <div class="about_img_wrap">
             <p class="card01"><img src="img/pic2.jpeg" alt=""></p>
             <p class="card02"><img src="img/pic1.jpeg" alt=""></p>
-            <p class="card03"><img src="img/pic3.jpeg" alt=""></p>
-            <p class="card04"><img src="img/pic6.jpeg" alt=""></p>
+            <p class="card03"><img src="img/contact.jpg" alt=""></p>
+            <p class="card04"><img src="img/team.jpeg" alt=""></p>
           </div>
           <div class="about_navi">
             <p class="about_prev">
@@ -396,6 +396,14 @@
       prev.classList.add('on');
       setTimeout(() => prev.classList.remove('on'), 500);
     });
+
+    const intro_visual = document.querySelector('.intro_visual');
+    const scroll = window.scrollY;
+    console.log(intro_visual.offsetTop);
+    console.log(scroll);
+    if (scroll == intro_visual.offsetTop) {
+      console.log('!!!');
+    }
 
   </script>
 </body>

@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/2ffeb95e18.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=784eb757547ac34035be2dc3389dc21d"></script>
   <script defer src="js/time.js"></script>
-  <script defer src="js/gallery.js"></script>
+  <script defer src="js/location.js"></script>
   <title>MOTION portfolio</title>
 </head>
 
@@ -36,23 +36,10 @@
     </div>
   </header>
   <section class="sub_wrap">
-    <div class="gallery_wrap">
-      <div class="sub_head">
-        <h2 class="head_title">GALLERY</h2>
-        <div class="searchBox">
-          <input type="text" id="search" placeholder="Pictures, people, or groups">
-          <button type="button" class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i><span
-              class="text_hidden">Search</span></button>
-        </div>
-      </div>
-      <p class="loading"><img src="img/loading.gif" alt=""></p>
+    <div class="location_wrap">
+      <h2 class="head_title">Location</h2>
       <div class="inner">
-        <div class="gallery_menu">
-          <button type="button" class="btnInterest">Interest Gallery</button>
-          <button type="button" class="btnMine">My Gallery</button>
-          <span class="gallery_menu__bg"></span>
-        </div>
-        <ul class="gallery_list"></ul>
+        <div class="wrap" id="map"></div>
       </div>
     </div>
   </section>

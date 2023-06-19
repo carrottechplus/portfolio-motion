@@ -1919,5 +1919,11 @@ label {
     padding-top: 18px;
   }
 }
+.location_wrap .inner #map {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background: #111;
+}
 
 /*# sourceMappingURL=style.css.map */
