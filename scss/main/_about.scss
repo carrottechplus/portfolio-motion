@@ -5,6 +5,7 @@
 		padding: 0 10vw;
 
 		.inner {
+			position: relative;
 			display: flex;
 			justify-content: space-between;
 			padding-top: 65px;
@@ -41,18 +42,184 @@
 			position: relative;
 			overflow: hidden;
 			padding-top: 50%;
+			display: flex;
 
+			// img {
+			// 	width: 100%;
+			// 	height: 100%;
+			// 	max-width: none;
+			// 	object-fit: cover;
+			// 	position: absolute;
+			// 	top: 0;
+			// 	bottom: 0;
+			// 	left: 0;
+			// 	right: 0;
+			// 	transition: 0.4s;
+			// }
+		}
+		.about_img_wrap p {
+			position: absolute;
+			top: 0;
+			left: 100%;
+			width: 100%;
+			height: 100%;
+			z-index: 3;
+			transition: 1s cubic-bezier(0.04, -0.44, 0.65, 0.95);
 			img {
 				width: 100%;
 				height: 100%;
-				max-width: none;
 				object-fit: cover;
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				transition: 0.4s;
+			}
+		}
+		.about_img_wrap p:nth-of-type(1) {
+			left: 0;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			z-index: 4;
+			transform: scale(1);
+		}
+
+		.about_navi {
+			padding-left: 25px;
+			color: white;
+			z-index: 3;
+
+			//공통의 버튼 스타일링
+			.about_prev,
+			.about_next {
+				position: relative;
+				display: inline-block;
+				width: 70px;
+				height: 70px;
+				border-radius: 50%;
+				border: 1px solid $primary-color;
+				margin-right: 20px;
+				cursor: pointer;
+
+				&::before,
+				&::after {
+					content: '';
+					display: block;
+					width: 17px;
+					height: 2px;
+					background: $primary-color;
+					position: absolute;
+					top: 50%;
+				}
+
+				&::before {
+					transform: rotate(45deg) translateX(0px);
+				}
+
+				&::after {
+					transform: rotate(-45deg) translateX(0px);
+				}
+
+				span {
+					width: 20px;
+					height: 2px;
+					background: $primary-color;
+					position: absolute;
+					top: 50%;
+					opacity: 1;
+				}
+
+				&.on {
+					animation: btnEffect 0.3s 1;
+					// 횟수 1
+				}
+			}
+			//좌우 방향에 따른 스타일링
+			.about_prev {
+				&::before,
+				&::after {
+					left: 25px;
+					transform-origin: left center;
+				}
+				span {
+					left: 25px;
+				}
+
+				&.on {
+					span {
+						animation: prevArrow 0.5s 1;
+					}
+				}
+			}
+			.about_next {
+				&::before,
+				&::after {
+					right: 25px;
+					transform-origin: right center;
+				}
+				span {
+					right: 25px;
+				}
+				&.on {
+					span {
+						animation: nextArrow 0.5s 1;
+					}
+				}
+			}
+			@keyframes btnEffect {
+				0% {
+					transform: scale(1);
+					border: 1px solid rgba(255, 255, 255, 1);
+				}
+				70% {
+					transform: scale(2);
+					border: 1px solid rgba(255, 255, 255, 0);
+				}
+				100% {
+					transform: scale(1);
+					border: 1px solid rgba(255, 255, 255, 1);
+				}
+			}
+			@keyframes prevArrow {
+				0% {
+					left: 25px;
+					width: 20px;
+					opacity: 1;
+				}
+				70% {
+					left: -30px;
+					width: 50px;
+					opacity: 0;
+				}
+				71% {
+					left: 100px;
+					width: 120px;
+					opacity: 0;
+				}
+				100% {
+					left: 25px;
+					width: 20px;
+					opacity: 1;
+				}
+			}
+
+			@keyframes nextArrow {
+				0% {
+					right: 25px;
+					width: 20px;
+					opacity: 1;
+				}
+				70% {
+					right: -30px;
+					width: 50px;
+					opacity: 0;
+				}
+				71% {
+					right: 100px;
+					width: 120px;
+					opacity: 0;
+				}
+				100% {
+					right: 25px;
+					width: 20px;
+					opacity: 1;
+				}
 			}
 		}
 	}

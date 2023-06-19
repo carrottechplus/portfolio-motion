@@ -9,6 +9,12 @@
 	align-items: center;
 	width: 100%;
 	padding: 10px 5%;
+	opacity: 1;
+	transition: transform 0.3s ease;
+
+	&.scrollDown {
+		transform: translate3d(0, -100px, 0);
+	}
 
 	#nav {
 		flex: 1;

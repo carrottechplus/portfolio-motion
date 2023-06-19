@@ -103,19 +103,19 @@
 					margin-top: 3vw;
 					border-radius: 0.25em;
 
-					&:before {
-						position: absolute;
-						top: 0;
-						left: 0;
-						width: 100%;
-						height: 100%;
-						background: $orange;
-						mix-blend-mode: multiply;
-						z-index: 2;
-						content: '';
-						opacity: 0;
-						transition: 0.4s;
-					}
+					// &:before {
+					// 	position: absolute;
+					// 	top: 0;
+					// 	left: 0;
+					// 	width: 100%;
+					// 	height: 100%;
+					// 	background: $orange;
+					// 	mix-blend-mode: multiply;
+					// 	z-index: 2;
+					// 	content: '';
+					// 	opacity: 0;
+					// 	transition: 0.4s;
+					// }
 
 					img {
 						width: 100%;
@@ -126,10 +126,11 @@
 					}
 
 					&:hover {
-						&:before {
-							opacity: 0.6;
-						}
+						// &:before {
+						// 	opacity: 0.6;
+						// }
 						img {
+							filter: none;
 							transform: scale(1.1);
 						}
 					}

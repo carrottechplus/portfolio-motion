@@ -16,58 +16,50 @@
 			}
 
 			.intro_head {
+				flex: 1;
 				text-align: center;
 
 				&__sub {
+					margin-bottom: 5px;
 					font-weight: 400;
 					font-size: 15px;
 					line-height: 20px;
 				}
 				.head_wrap {
-					overflow: hidden;
 					// height: 120px;
 				}
 				.head_title {
 					overflow: hidden;
 					width: 100%;
 					position: relative;
-					margin-top: 20px;
 					// animation-name: change;
 					// animation-duration: 10s;
-					// animation-iteration-count: infinite;
+					// animation-iteration-count: infinite;height: 4.125rem;
+					height: 160px;
+					line-height: 160px;
+					position: relative;
+					width: 100%;
 				}
 				.head_title > h2 {
+					padding-top: 7px;
+					overflow: visible;
 					margin-top: 0;
-					padding-top: 5px;
+					position: absolute;
+					top: 0;
+					animation: slide 5s 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
 				}
-
-				@keyframes change {
-					// 0%, 13.66%
-					// 25%, 38.66%
-					// 50%, 63.66%
-					// 75%, 88.66%
-					// 100%,
-
-					0%,
-					13.66%,
-					100% {
-						transform: translate3d(0, 0, 0);
+				@keyframes slide {
+					0% {
+						top: 0;
 					}
-					20%,
-					33.66% {
-						transform: translate3d(0, 30%, 0);
+					33% {
+						top: -160px;
 					}
-					40%,
-					53.66% {
-						transform: translate3d(0, 60%, 0);
+					66% {
+						top: -320px;
 					}
-					60%,
-					73.66% {
-						transform: translate3d(0, 90%, 0);
-					}
-					80%,
-					93.66% {
-						transform: translate3d(0, 60%, 0);
+					99% {
+						top: 0;
 					}
 				}
 			}

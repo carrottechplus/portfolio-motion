@@ -42,9 +42,7 @@
             <p class="intro_head__sub">AN INTERACTIVE DESIGN AGENCY</p>
             <div class="head_wrap">
               <div class="head_title">
-                <h2>BRAND VISION</h2>
-                <!-- <h2>DESIGN CULTURE</h2>
-                <h2>TECHNICAL PROWESS</h2> -->
+                <h2>BRAND VISION<br>DESIGN CULTURE<br>TECHNICAL PROWESS</h2>
               </div>
             </div>
           </div>
@@ -297,7 +295,18 @@
             <p class="btn_wrap"><a href="#" class="btn_round"><span>ABOUT US</span></a></p>
           </div>
           <div class="about_img_wrap">
-            <img src="img/pic2.jpeg" alt="">
+            <p class="card01"><img src="img/pic2.jpeg" alt=""></p>
+            <p class="card02"><img src="img/pic1.jpeg" alt=""></p>
+            <p class="card03"><img src="img/pic3.jpeg" alt=""></p>
+            <p class="card04"><img src="img/pic6.jpeg" alt=""></p>
+          </div>
+          <div class="about_navi">
+            <p class="about_prev">
+              <span></span>
+            </p>
+            <p class="about_next">
+              <span></span>
+            </p>
           </div>
         </div>
       </div>
@@ -352,6 +361,43 @@
       </div>
     </div>
   </footer>
+  <script>
+    const header = document.querySelector(".header_wrap");
+    let lastScroll = document.documentElement.scrollTop || 0;
+    header.classList.contains('scrollUp').remove;
+
+    document.addEventListener("scroll", () => {
+      let scrollTop = document.documentElement.scrollTop;
+      if (scrollTop > lastScroll) {
+        // down
+        header.classList.add('scrollDown');
+      } else {
+        //up
+        header.classList.remove('scrollDown');
+        // header.classList.add('scrollUp');
+      }
+      lastScroll = scrollTop
+    });
+
+    const frame = document.querySelector('.about_img_wrap');
+    const prev = document.querySelector('.about_prev');
+    const next = document.querySelector('.about_next');
+
+    next.addEventListener('click', () => {
+      frame.append(frame.firstElementChild);
+
+      next.classList.add('on');
+      setTimeout(() => next.classList.remove('on'), 500);
+    });
+
+    prev.addEventListener('click', () => {
+      frame.prepend(frame.lastElementChild);
+
+      prev.classList.add('on');
+      setTimeout(() => prev.classList.remove('on'), 500);
+    });
+
+  </script>
 </body>
 
 </html>
