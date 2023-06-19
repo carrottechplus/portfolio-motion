@@ -55,8 +55,15 @@
                       <input type="text" name="userName" id="userName" placeholder="아이디를 입력하세요.">
                     </td>
                   </tr>
-
                   <tr>
+                    <th scope="row">
+                      <label for="company">Company name</label>
+                    </th>
+                    <td>
+                      <input type="text" name="company" id="company" placeholder="회사명을 입력하세요.">
+                    </td>
+                  </tr>
+                  <!-- <tr>
                     <th scope="row">
                       <label for="pwd1">Password</label>
                     </th>
@@ -71,7 +78,7 @@
                     <td>
                       <input type="password" name="pwd2" id="pwd2" placeholder="비밀번호를 재 입력하세요.">
                     </td>
-                  </tr>
+                  </tr> -->
 
                   <tr>
                     <th><label for="email">E-mail</label></th>
@@ -109,21 +116,25 @@
                   </tr>
 
                   <tr>
-                    <th scope="row">
-                      Agency Shopping <span class="small">Please check all that apply</span>
-                    </th>
+                    <th scope="row">Preferred Contact Method</th>
                     <td>
-                      <input type="checkbox" name="hobby" id="sports" value="sports">
-                      <label for="sports">Still researching</label>
-
-                      <input type="checkbox" name="hobby" id="music" value="music">
-                      <label for="music">Ready to go</label>
-
-                      <input type="checkbox" name="hobby" id="game" value="game">
-                      <label for="game">I have a Brief/RFP</label>
-
-                      <input type="checkbox" name="hobby" id="reading" value="reading">
-                      <label for="reading">I know my budget</label>
+                      <ul class="checkboxList">
+                        <li><input type="checkbox" name="method" id="method-email" value="method-email">
+                          <label for="method-email">Email</label>
+                        </li>
+                        <li><input type="checkbox" name="method" id="phone" value="phone">
+                          <label for="phone">Phone Call</label>
+                        </li>
+                        <li><input type="checkbox" name="method" id="sms" value="sms">
+                          <label for="sms">Text Message (SMS)</label>
+                        </li>
+                        <li><input type="checkbox" name="method" id="zoom" value="zoom">
+                          <label for="zoom">Zoom Meeting</label>
+                        </li>
+                        <li><input type="checkbox" name="method" id="other" value="other">
+                          <label for="other">Other</label>
+                        </li>
+                      </ul>
                     </td>
                   </tr>
 

@@ -7,10 +7,11 @@ setTimeout(() => {
 
 btnSubmit.addEventListener('click', (e) => {
 	if (!isTxt('userName', 5)) e.preventDefault();
-	if (!isPwd('pwd1', 'pwd2', 4)) e.preventDefault();
+	if (!isTxt('company', 2)) e.preventDefault();
+	// if (!isPwd('pwd1', 'pwd2', 4)) e.preventDefault();
 	if (!isEmail('email', 6)) e.preventDefault();
 	if (!isCheck('gender')) e.preventDefault();
-	if (!isCheck('hobby')) e.preventDefault();
+	if (!isCheck('method')) e.preventDefault();
 	if (!isSelect('pos')) e.preventDefault();
 });
 
@@ -30,7 +31,7 @@ function isTxt(name, len) {
 	}
 }
 
-function isPwd(pwd1, pwd2, len) {
+/* function isPwd(pwd1, pwd2, len) {
 	const num = /[0-9]/;
 	const eng = /[a-zA-Z]/;
 	const spc = /[!@#$%^&*()_+]/;
@@ -49,7 +50,7 @@ function isPwd(pwd1, pwd2, len) {
 		resetErr(pwdEl1);
 		return true;
 	}
-}
+} */
 
 function isEmail(name, len) {
 	const email = form.querySelector(`[name=${name}]`);
