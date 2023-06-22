@@ -1018,7 +1018,7 @@ label {
   width: 100%;
   height: 100%;
   z-index: 3;
-  transition: 1s cubic-bezier(0.04, -0.44, 0.65, 0.95);
+  transition: 0.7s ease;
 }
 .main_wrap .about_wrap .about_img_wrap p img {
   width: 100%;
@@ -1031,7 +1031,7 @@ label {
   height: 100%;
   padding: 0;
   z-index: 3;
-  transform: scale(2);
+  transform: scale(1.1);
 }
 .main_wrap .about_wrap .about_img_wrap p:nth-of-type(2) {
   left: 0;
@@ -1954,11 +1954,131 @@ label {
     padding-top: 18px;
   }
 }
-.location_wrap .inner #map {
+.location_wrap .head_title, .location_wrap .head_title *, .head_title .location_wrap * {
+  padding: 0 10%;
+}
+.location_wrap .inner {
   position: relative;
-  width: 100%;
-  height: 600px;
+}
+.location_wrap .inner #map {
+  height: 50vh;
   background: #111;
+}
+.location_wrap .contact_form {
+  display: flex;
+  gap: 10%;
+  margin-top: 100px;
+  padding: 0 10%;
+}
+.location_wrap .contact_form .form_wrap {
+  width: 50%;
+}
+.location_wrap .contact_form .form_wrap form {
+  height: 100%;
+}
+.location_wrap .contact_form .form_wrap fieldset {
+  height: 100%;
+}
+.location_wrap .contact_form .form_wrap table {
+  width: 100%;
+}
+.location_wrap .contact_form .form_wrap table tr th {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+  font-family: "Verdana", sans-serif;
+  text-align: left;
+}
+.location_wrap .contact_form .form_wrap table tr td {
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  font-family: "Verdana", sans-serif;
+  text-align: left;
+}
+.location_wrap .contact_form .form_wrap table tr td p {
+  font-size: 14px;
+  display: block;
+  width: auto;
+  font-weight: 500;
+  line-height: 18px;
+  padding-top: 0;
+  margin: 4px 0;
+  color: #f2545b;
+}
+.location_wrap .contact_form .form_wrap table tr td input,
+.location_wrap .contact_form .form_wrap table tr td select {
+  background: #f5f8fa;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  padding: 9px 10px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #33475b;
+  border: 1px solid #cbd6e2;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-family: "Verdana", sans-serif;
+}
+.location_wrap .contact_form .form_wrap table tr td textarea {
+  background: #f5f8fa;
+  resize: none;
+  width: 100%;
+  height: 80px;
+  padding: 9px 10px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #33475b;
+  border: 1px solid #cbd6e2;
+  box-sizing: border-box;
+  border-radius: 2px;
+  font-family: "Verdana", sans-serif;
+}
+.location_wrap .contact_form .form_wrap table tr td input[type=checkbox],
+.location_wrap .contact_form .form_wrap table tr td input[type=radio] {
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 3px 5px 3px 10px;
+  line-height: normal;
+  border: none;
+}
+.location_wrap .contact_form .form_wrap table .checkboxList li {
+  margin-bottom: 10px;
+}
+.location_wrap .contact_form .form_wrap table .form_btn td {
+  text-align: center;
+  padding: 30px 0 0;
+}
+.location_wrap .contact_form .form_wrap table .form_btn input {
+  border: 0;
+  width: 40%;
+  height: 40px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #33475b;
+  box-sizing: border-box;
+  border-radius: 2px;
+  font-family: "Verdana", sans-serif;
+  cursor: pointer;
+}
+.location_wrap .contact_form .form_wrap table .form_btn input[type=submit] {
+  margin-left: 20px;
+  background: #cbd6e2;
+  border: 1px solid #cbd6e2;
+}
+.location_wrap .contact_form .form_wrap table .form_btn input[type=reset] {
+  background: #cbcbcb;
+  border: 1px solid #cbd6e2;
+}
+.location_wrap .contact_form .form_info {
+  width: 50%;
+}
+.location_wrap .contact_form .form_info__title {
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/2ffeb95e18.js" crossorigin="anonymous"></script>
-  <script defer src="js/time.js"></script>
+  <script defer src="js/main.js"></script>
   <title>MOTION portfolio</title>
 </head>
 
@@ -398,17 +398,18 @@
     });
 
     window.addEventListener('scroll', () => {
-      const intro_visual = document.querySelector('.intro_visual');
+      const visual = document.querySelector('.intro_visual');
+      const bottom = document.querySelector('.intro_bottom');
       let scrollLocation = document.documentElement.scrollTop;
 
       const scroll = window.scrollY;
-      let scroll2 = scroll - intro_visual.offsetTop;
+      let scroll2 = scroll - visual.offsetTop;
 
-      if (scrollLocation >= intro_visual.offsetTop) {
-        intro_visual.classList.add('now');
-        // intro_visual.style.height = scroll2 + 'px';
+      if (scrollLocation >= visual.offsetTop && bottom.offsetTop > scrollLocation) {
+        visual.classList.add('now');
+        // visual.style.height = scroll2 + 'px';
       } else {
-        intro_visual.classList.remove('now');
+        visual.classList.remove('now');
       }
     })
     // window.addEventListener('scroll', () => {

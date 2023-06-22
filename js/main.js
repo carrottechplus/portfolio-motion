@@ -1,7 +1,6 @@
 // const footer = document.querySelector('footer');
 const timeElements = document.querySelectorAll('.clock_text .clock_realtime');
 const [am, pm] = document.querySelectorAll('.clock_text .clock_dl');
-console.log(am);
 
 // 1. 현재 시간 가져오기
 // 2. 화면에 시간 찍기
@@ -26,7 +25,6 @@ function getTime() {
 
 	return [hr, min, sec];
 }
-console.log(getTime());
 
 function setTime(num, index) {
 	if (num < 10) num = '0' + num;
@@ -43,3 +41,8 @@ setInterval(() => {
 		setTime(time, index);
 	});
 }, 1000);
+
+const totop = document.querySelector('.btn_totop');
+totop.addEventListener('click', () => {
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+});

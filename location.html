@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/2ffeb95e18.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=784eb757547ac34035be2dc3389dc21d"></script>
-  <script defer src="js/time.js"></script>
+  <script defer src="js/main.js"></script>
   <script defer src="js/location.js"></script>
+  <script defer src="js/form.js"></script>
   <title>MOTION portfolio</title>
 </head>
 
@@ -40,6 +41,87 @@
       <h2 class="head_title">Location</h2>
       <div class="inner">
         <div class="wrap" id="map"></div>
+        <div class="contact_form">
+          <div class="form_wrap">
+            <form action="result.html" method="get" id="member">
+              <fieldset>
+                <legend class="text_hidden">연락 입력항목</legend>
+                <table>
+                  <tbody>
+                    <tr>
+                      <th scope="row">
+                        <label for="userName">Name</label>
+                      </th>
+                      <td>
+                        <input type="text" name="userName" id="userName" placeholder="이름을 입력하세요.">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <label for="company">Company name</label>
+                      </th>
+                      <td>
+                        <input type="text" name="company" id="company" placeholder="회사명을 입력하세요.">
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th><label for="email">E-mail</label></th>
+                      <td>
+                        <input type="email" name="email" id="email" placeholder="이메일 주소를 입력하세요."></input>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scrope="row">
+                        <label for="pos">Position</label>
+                      </th>
+                      <td>
+                        <select name="pos" id="pos">
+                          <option value="">Select your position</option>
+                          <option value="opt1">Information technology manager</option>
+                          <option value="opt2">Product manager</option>
+                          <option value="opt3">Information technology manager</option>
+                          <option value="opt4">Software engineer</option>
+                        </select>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th><label for="'comments">Comments</label></th>
+                      <td>
+                        <textarea name="comments" id="comments" cols="30" rows="4"
+                          placeholder="남기는 글을 입력하세요."></textarea>
+                      </td>
+                    </tr>
+                    <tr class="form_btn">
+                      <td colspan="2">
+                        <input type="reset" value="Cancel">
+                        <input type="submit" value="Submit">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </fieldset>
+            </form>
+          </div>
+          <div class="form_info">
+            <h3>Get In Touch</h3>
+            <ul>
+              <li>
+                <p class="form_info__title">NEW BUSINESS</p>
+                <p class="form_info__desc">business@papertiger.com</p>
+              </li>
+              <li>
+                <p class="form_info__title">GENERAL INQUIRIES</p>
+                <p class="form_info__desc">team@papertiger.com</p>
+              </li>
+              <li>
+                <p class="form_info__title">WORK WITH US</p>
+                <p class="form_info__desc">careers@papertiger.com</p>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -76,7 +158,7 @@
             </p>
           </div>
         </div>
-        <a href="#" class="footer_top__btn btn_totop">Back to top</a>
+        <button type="button" class="footer_top__btn btn_totop">Back to top</button>
       </div>
       <div class="footer_bottom">
         <h1 class="logo"><a href="index.html">PaperTiger</a></h1>
@@ -92,6 +174,33 @@
       </div>
     </div>
   </footer>
+  <script>
+
+    //   console.log('pageYOffset', window.pageYOffset);
+    //   console.log('offsetHeight', document.body.offsetHeight);
+    //   console.log('innerHeight', window.innerHeight);
+    //   console.log('scrollTop', document.documentElement.scrollTop);
+    // const scrollTop = () => {
+    //   const totop = document.querySelector('.btn_totop');
+
+    //   const scrollWindow = () => {
+    //     if (window.scrollY != 0) {
+    //       setTimeout(() => {
+    //         window.scrollTo(0, window.scrollY - 50);
+    //         scrollWindow();
+    //       }, 10);
+    //     }
+    //   };
+    //   totop.addEventListener("click", scrollWindow);
+    // };
+    // scrollTop();
+
+    const totop = document.querySelector('.btn_totop');
+    totop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+
+    })
+  </script>
 </body>
 
 </html>
