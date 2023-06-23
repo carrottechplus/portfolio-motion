@@ -2105,7 +2105,7 @@ label {
   display: block;
   width: 100%;
   padding-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-family: "Verdana", sans-serif;
   text-align: left;
 }
@@ -2121,7 +2121,7 @@ label {
 }
 .location_wrap .contact_form .form_wrap table tr td input,
 .location_wrap .contact_form .form_wrap table tr td select {
-  background: transparent;
+  background: #f5f8fa;
   display: inline-block;
   width: 100%;
   height: 40px;
@@ -2129,13 +2129,13 @@ label {
   font-size: 16px;
   line-height: 22px;
   color: #33475b;
-  border: 0;
-  border-bottom: 1px solid #080808;
+  border: 1px solid #cbd6e2;
   box-sizing: border-box;
+  border-radius: 10px;
   font-family: "Verdana", sans-serif;
 }
 .location_wrap .contact_form .form_wrap table tr td textarea {
-  background: transparent;
+  background: #f5f8fa;
   resize: none;
   width: 100%;
   height: 80px;
@@ -2143,9 +2143,9 @@ label {
   font-size: 16px;
   line-height: 22px;
   color: #33475b;
-  border: 0;
-  border-bottom: 1px solid #080808;
+  border: 1px solid #cbd6e2;
   box-sizing: border-box;
+  border-radius: 2px;
   font-family: "Verdana", sans-serif;
 }
 .location_wrap .contact_form .form_wrap table tr td input[type=checkbox],
@@ -2232,28 +2232,28 @@ label {
 
 @media screen and (max-width: 979px) {
   .location_wrap .head_title, .location_wrap .head_title *, .head_title .location_wrap * {
-    padding: 0 5%;
+    padding: 0 10%;
+  }
+  .location_wrap .inner {
+    position: relative;
+  }
+  .location_wrap .inner #map {
+    height: 50vh;
+    background: #111;
   }
   .location_wrap .contact_form {
-    display: flex;
-    flex-direction: column-reverse;
+    display: block;
+    gap: 10%;
     margin-top: 100px;
     padding: 0 10%;
     position: relative;
   }
-  .location_wrap .contact_form:before {
-    display: none;
-  }
   .location_wrap .contact_form .form_wrap {
     width: 100%;
-    margin-top: 50px;
-    background: #fff;
-    padding: 30px;
-    border-radius: 20px;
   }
   .location_wrap .contact_form .form_info {
     width: 100%;
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.cs.map */

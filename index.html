@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/2ffeb95e18.js" crossorigin="anonymous"></script>
   <script defer src="js/main.js"></script>
+  <script defer src="js/anime.js"></script>
+  <script defer src="js/scroll.js"></script>
   <title>MOTION portfolio</title>
 </head>
 
@@ -19,9 +21,9 @@
         <ul class="gnb">
           <li><a href="members.html">About</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="location.html">Location</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="board.html">Board</a></li>
           <li><a href="youtube.html">Video</a></li>
+          <li><a href="location.html">Location</a></li>
         </ul>
       </nav>
       <div class="nav_side">
@@ -34,7 +36,7 @@
     </div>
   </header>
   <main class="main_wrap">
-    <section class="intro_wrap">
+    <section class="intro_wrap myScroll">
       <div class="">
         <div class="intro_head_wrap">
           <span class="head_title__sub">BUILDING BADASS<br>WEBSITES</span>
@@ -66,7 +68,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section class="myScroll">
       <div class="work_wrap">
         <div class="inner">
           <h2 class="head_title_wrap">
@@ -117,58 +119,7 @@
         </div>
       </div>
     </section>
-    <section class="clients_list_wrap" style="display:none">
-      <div class="inner">
-        <p>we love bragging on our clients.</p>
-        <div class="clients_list">
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/616865c4fb516d0c82d53f3d_clientLogo-02.svg"
-            loading="lazy" alt="The New York Times" class="" />
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/616865c410f94490685ccc9c_clientLogo-03.svg"
-            loading="lazy" alt="PBS" class="" />
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/616865c5f21027a27a5d6da6_clientLogo-04.svg"
-            loading="lazy" alt="Insider Inc." class="" />
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/616865c43bc3d1000408b5c8_clientLogo-05.svg"
-            loading="lazy" alt="Marketplace" class="" />
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/6168675e84e36f3a2a3311c3_clientLogo-06.webp"
-            loading="lazy" alt="American Public Media" class="" />
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/616865c49bad11004c2a59c5_clientLogo-07.svg"
-            loading="lazy" alt="Harvard" class="" />
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/616865c448ed876c2b67da3a_clientLogo-08.svg"
-            loading="lazy" alt="Mooyah" class="" />
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/616865c4ed022ae3cc0b28fc_clientLogo-09.svg"
-            loading="lazy" alt="Hyatt" class="" />
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/616865c410f94466d95ccc9d_clientLogo-10.svg"
-            loading="lazy" alt="Genius" class="" />
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/616865c48a732e649ea235eb_clientLogo-11.webp"
-            loading="lazy" alt="Hi-Rez Studios" class="" />
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/616865c4fb516d8632d53f3e_clientLogo-12.webp"
-            loading="lazy" alt="Redshift" class="" />
-          <img src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/6194624073ab07455b7b1781_Vector.svg"
-            loading="lazy" alt="Britax" class="" />
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/616865c66351f4037248f9a8_clientLogo-13.svg"
-            loading="lazy" alt="Hu Kitchen" class="" />
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/616865c785ba0fa80c8a1f80_clientLogo-14.png"
-            loading="lazy" alt="BMI" class="" />
-          <img
-            src="https://assets.website-files.com/60e4912ee7c15fb303f4c588/616865c6f98926291c31dc83_clientLogo-15.svg"
-            loading="lazy" alt="Crestron" class="" />
-        </div>
-      </div>
-    </section>
-    <section class="news_wrap">
+    <section class="news_wrap myScroll">
       <div class="inner">
         <h2 class="head_title">WHAT WE'RE <br>POSTING</h2>
         <div class="news_list_wrap">
@@ -231,7 +182,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section class="myScroll">
       <div class="gallery_wrap">
         <div class="inner">
           <div class="head_title_wrap">
@@ -282,7 +233,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section class="myScroll">
       <div class="about_wrap">
         <div class="inner">
           <div class="about_title_wrap">
@@ -311,6 +262,14 @@
         </div>
       </div>
     </section>
+    <div id="scroll_navi">
+      <button class="on"></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <span class="tab_active__bg"></span>
+    </div>
   </main>
   <footer class="footer">
     <div class="inner footer_wrap">
@@ -352,7 +311,7 @@
         <ul class="gnb">
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="board.html">Board</a></li>
           <li><a href="youtube.html">Video</a></li>
         </ul>
         <div class="nav_side">
@@ -362,22 +321,6 @@
     </div>
   </footer>
   <script>
-    const header = document.querySelector(".header_wrap");
-    let lastScroll = document.documentElement.scrollTop || 0;
-    header.classList.contains('scrollUp').remove;
-
-    document.addEventListener("scroll", () => {
-      let scrollTop = document.documentElement.scrollTop;
-      if (scrollTop > lastScroll) {
-        // down
-        header.classList.add('scrollDown');
-      } else {
-        //up
-        header.classList.remove('scrollDown');
-        // header.classList.add('scrollUp');
-      }
-      lastScroll = scrollTop
-    });
 
     const frame = document.querySelector('.about_img_wrap');
     const prev = document.querySelector('.about_prev');
@@ -397,30 +340,13 @@
       setTimeout(() => prev.classList.remove('on'), 500);
     });
 
-    window.addEventListener('scroll', () => {
-      const visual = document.querySelector('.intro_visual');
-      const bottom = document.querySelector('.intro_bottom');
-      let scrollLocation = document.documentElement.scrollTop;
+    console.log('pageYOffset', window.pageYOffset);
+    console.log('offsetHeight', document.body.offsetHeight);
+    console.log('innerHeight', window.innerHeight);
+    console.log('scrollTop', document.documentElement.scrollTop);
 
-      const scroll = window.scrollY;
-      let scroll2 = scroll - visual.offsetTop;
 
-      if (scrollLocation >= visual.offsetTop && bottom.offsetTop > scrollLocation) {
-        visual.classList.add('now');
-        // visual.style.height = scroll2 + 'px';
-      } else {
-        visual.classList.remove('now');
-      }
-    })
-    // window.addEventListener('scroll', () => {
-    //   let scrollLocation = document.documentElement.scrollTop; // 현재 스크롤바 위치
-    //   let windowHeight = window.innerHeight; // 스크린 창
-    //   let fullHeight = document.body.scrollHeight; //  margin 값은 포함 x
 
-    //   if (scrollLocation + windowHeight >= fullHeight) {
-    //     console.log('끝')
-    //   }
-    // })
   </script>
 </body>
 

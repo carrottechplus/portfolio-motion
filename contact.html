@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/2ffeb95e18.js" crossorigin="anonymous"></script>
   <script defer src="js/main.js"></script>
+  <script defer src="js/anime.js"></script>
   <script defer src="js/form.js"></script>
   <title>MOTION portfolio</title>
 </head>
@@ -20,9 +21,9 @@
         <ul class="gnb">
           <li><a href="members.html">About</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="location.html">Location</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="board.html">Board</a></li>
           <li><a href="youtube.html">Video</a></li>
+          <li><a href="location.html">Location</a></li>
         </ul>
       </nav>
       <div class="nav_side">
@@ -199,7 +200,7 @@
         <ul class="gnb">
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="board.html">Board</a></li>
           <li><a href="youtube.html">Video</a></li>
         </ul>
         <div class="nav_side">
@@ -208,6 +209,24 @@
       </div>
     </div>
   </footer>
+
+  <script>
+
+    const pic = document.querySelector('button');
+    const box = document.querySelector('.contact_head');
+
+    box.addEventListener('scroll', () => {
+      console.log('test');
+      new Anime(pic, {
+        prop: 'height',
+        value: 300,
+        duration: 500,
+      });
+    });
+
+
+
+  </script>
 </body>
 
 </html>

@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/2ffeb95e18.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=784eb757547ac34035be2dc3389dc21d"></script>
   <script defer src="js/main.js"></script>
   <script defer src="js/location.js"></script>
   <script defer src="js/form.js"></script>
+  <script defer type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=784eb757547ac34035be2dc3389dc21d"></script>
   <title>MOTION portfolio</title>
 </head>
 
@@ -22,9 +23,9 @@
         <ul class="gnb">
           <li><a href="members.html">About</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="location.html">Location</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="board.html">Board</a></li>
           <li><a href="youtube.html">Video</a></li>
+          <li><a href="location.html">Location</a></li>
         </ul>
       </nav>
       <div class="nav_side">
@@ -43,7 +44,7 @@
         <div class="wrap" id="map"></div>
         <div class="contact_form">
           <div class="form_wrap">
-            <form action="result.html" method="get" id="member">
+            <form action="result.html" method="get" id="contact">
               <fieldset>
                 <legend class="text_hidden">연락 입력항목</legend>
                 <table>
@@ -58,10 +59,10 @@
                     </tr>
                     <tr>
                       <th scope="row">
-                        <label for="company">Company name</label>
+                        <label for="phone">Phone Number</label>
                       </th>
                       <td>
-                        <input type="text" name="company" id="company" placeholder="회사명을 입력하세요.">
+                        <input type="text" name="phone" id="phone" placeholder="휴대폰 번호를 입력하세요.">
                       </td>
                     </tr>
 
@@ -72,7 +73,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <th scrope="row">
+                      <th scope="row">
                         <label for="pos">Position</label>
                       </th>
                       <td>
@@ -105,19 +106,22 @@
             </form>
           </div>
           <div class="form_info">
-            <h3>Get In Touch</h3>
+            <h3 class="form_info__head">Get In Touch</h3>
             <ul>
               <li>
                 <p class="form_info__title">NEW BUSINESS</p>
-                <p class="form_info__desc">business@papertiger.com</p>
+                <p class="form_info__desc"><i class="fa-solid fa-building"></i><a
+                    href="mailto:business@papertiger.com">business@papertiger.com</a></p>
               </li>
               <li>
                 <p class="form_info__title">GENERAL INQUIRIES</p>
-                <p class="form_info__desc">team@papertiger.com</p>
+                <p class="form_info__desc"><i class="fa-solid fa-pen-to-square"></i><a
+                    href="mailto:team@papertiger.com">team@papertiger.com</a></p>
               </li>
               <li>
                 <p class="form_info__title">WORK WITH US</p>
-                <p class="form_info__desc">careers@papertiger.com</p>
+                <p class="form_info__desc"><i class="fa-solid fa-user-tie"></i><a
+                    href="mailto:careers@papertiger.com">careers@papertiger.com</a></p>
               </li>
             </ul>
           </div>
@@ -165,7 +169,7 @@
         <ul class="gnb">
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="board.html">Board</a></li>
           <li><a href="youtube.html">Video</a></li>
         </ul>
         <div class="nav_side">
@@ -176,10 +180,6 @@
   </footer>
   <script>
 
-    //   console.log('pageYOffset', window.pageYOffset);
-    //   console.log('offsetHeight', document.body.offsetHeight);
-    //   console.log('innerHeight', window.innerHeight);
-    //   console.log('scrollTop', document.documentElement.scrollTop);
     // const scrollTop = () => {
     //   const totop = document.querySelector('.btn_totop');
 
@@ -194,12 +194,6 @@
     //   totop.addEventListener("click", scrollWindow);
     // };
     // scrollTop();
-
-    const totop = document.querySelector('.btn_totop');
-    totop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-
-    })
   </script>
 </body>
 

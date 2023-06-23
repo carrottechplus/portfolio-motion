@@ -127,7 +127,7 @@ $light-blue: #bfedd9;
 			display: inline-block;
 			width: 33px;
 			height: 33px;
-			background: $orange;
+			background: $red;
 			border-radius: 100%;
 			font-size: 18px;
 			// content: '';
@@ -149,15 +149,105 @@ $light-blue: #bfedd9;
 		z-index: 1;
 	}
 	&:hover {
-		border-color: $orange;
+		border-color: $red;
 		&::before {
-			background: $orange;
+			background: $red;
 			transform: scaleY(1);
 		}
 	}
 }
 .text_tab {
 	margin-left: 17vw;
+}
+
+#scroll_navi {
+	position: fixed;
+	top: 50%;
+	right: 3%;
+	transform: translateY(-50%);
+	width: 26px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		display: block;
+		background: #000;
+		width: 2px;
+		height: 100%;
+		border-radius: 2px;
+		content: '';
+		z-index: 1;
+	}
+
+	button {
+		position: relative;
+		width: 26px;
+		height: 26px;
+		border-radius: 26px;
+		background: #f0f0f0;
+		border: 1px solid $primary-color;
+		z-index: 2;
+		transition: background-color 0.2s;
+		cursor: pointer;
+
+		&:not(:first-child) {
+			margin-top: 26px;
+		}
+	}
+	.tab_active__bg {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: -2px;
+		background: #f0f0f0 url('../../img/circle-solid.svg') no-repeat center;
+		background-size: contain;
+		width: 30px;
+		height: 30px;
+		z-index: 3;
+		opacity: 0;
+		transform: translateY(-2px);
+		transition: all 0.2s ease-in-out;
+		border-radius: 30px;
+	}
+	button.on ~ .tab_active__bg {
+		transition: all 0.2s ease-in-out;
+		opacity: 1;
+	}
+	button.on:nth-child(1) ~ .tab_active__bg {
+		transform: translateY(-2px);
+	}
+	button.on:nth-child(2) ~ .tab_active__bg {
+		transform: translateY(50px);
+	}
+	button.on:nth-child(3) ~ .tab_active__bg {
+		transform: translateY(102px);
+	}
+	button.on:nth-child(4) ~ .tab_active__bg {
+		transform: translateY(154px);
+	}
+	button.on:nth-child(5) ~ .tab_active__bg {
+		transform: translateY(206px);
+	}
+
+	// li.on:nth-of-type(2) {
+	// 	&::after {
+	// 		opacity: 1;
+	// 	}
+	// }
+
+	// li.on:hover {
+	// 	background: #fff url('../../img/circle-solid.svg') no-repeat center;
+	// 	background-size: contain;
+	// 	width: 30px;
+	// 	height: 30px;
+	// 	margin-left: -2px;
+	// 	border: 0;
+	// }
 }
 
 .main_wrap,
@@ -169,6 +259,18 @@ $light-blue: #bfedd9;
 .sub_wrap {
 	padding-bottom: 120px;
 	color: $secondary-color;
+	position: relative;
+	&::after {
+		display: block;
+		width: 100%;
+		height: 30px;
+		border-radius: 0 0 30px 30px;
+		background: #f0f0f0;
+		content: '';
+		position: absolute;
+		bottom: -30px;
+		left: 0;
+	}
 }
 
 @media screen and (max-width: $tablet) {

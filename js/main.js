@@ -1,4 +1,3 @@
-// const footer = document.querySelector('footer');
 const timeElements = document.querySelectorAll('.clock_text .clock_realtime');
 const [am, pm] = document.querySelectorAll('.clock_text .clock_dl');
 
@@ -41,6 +40,23 @@ setInterval(() => {
 		setTime(time, index);
 	});
 }, 1000);
+
+const header = document.querySelector('.header_wrap');
+let lastScroll = document.documentElement.scrollTop || 0;
+header.classList.contains('scrollUp').remove;
+
+document.addEventListener('scroll', () => {
+	let scrollTop = document.documentElement.scrollTop;
+	if (scrollTop > lastScroll) {
+		// down
+		header.classList.add('scrollDown');
+	} else {
+		//up
+		header.classList.remove('scrollDown');
+		// header.classList.add('scrollUp');
+	}
+	lastScroll = scrollTop;
+});
 
 const totop = document.querySelector('.btn_totop');
 totop.addEventListener('click', () => {

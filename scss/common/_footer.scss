@@ -1,5 +1,6 @@
 .footer_wrap {
 	padding: 3% 5%;
+	padding-top: 100px;
 	background: rgba(0, 0, 0, 0.9);
 	color: #d5d5d5;
 	* {
@@ -139,12 +140,12 @@
 				font-size: 30px;
 			}
 			&:hover {
-				border-color: $orange;
+				border-color: $red;
 				span {
 					color: $primary-color;
 				}
 				&::before {
-					background: $orange;
+					background: $red;
 					transform: scaleY(1);
 				}
 			}

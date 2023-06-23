@@ -1,17 +1,25 @@
 const form = document.querySelector('#member');
 const btnSubmit = form.querySelector('input[type=submit]');
 
-setTimeout(() => {
-	document.querySelector('.pic').classList.add('on');
-}, 1000);
+const contact = document.querySelector('#contact');
+const btnSubmit2 = contact.querySelector('input[type=submit]');
+console.log(btnSubmit);
+console.log(btnSubmit2);
 
 btnSubmit.addEventListener('click', (e) => {
 	if (!isTxt('userName', 5)) e.preventDefault();
 	if (!isTxt('company', 2)) e.preventDefault();
 	// if (!isPwd('pwd1', 'pwd2', 4)) e.preventDefault();
 	if (!isEmail('email', 6)) e.preventDefault();
+	if (!isSelect('pos')) e.preventDefault();
 	if (!isCheck('gender')) e.preventDefault();
 	if (!isCheck('method')) e.preventDefault();
+});
+
+btnSubmit2.addEventListener('click', (e) => {
+	if (!isTxt('userName', 5)) e.preventDefault();
+	if (!isTxt('phone', 10)) e.preventDefault();
+	if (!isEmail('email', 6)) e.preventDefault();
 	if (!isSelect('pos')) e.preventDefault();
 });
 
@@ -31,7 +39,7 @@ function isTxt(name, len) {
 	}
 }
 
-/* function isPwd(pwd1, pwd2, len) {
+function isPwd(pwd1, pwd2, len) {
 	const num = /[0-9]/;
 	const eng = /[a-zA-Z]/;
 	const spc = /[!@#$%^&*()_+]/;
@@ -40,7 +48,13 @@ function isTxt(name, len) {
 	const pwd1_val = form.querySelector(`[name=${pwd1}]`).value;
 	const pwd2_val = form.querySelector(`[name=${pwd2}]`).value;
 
-	if (pwd1_val !== pwd2_val || pwd1_val.length < len || !num.test(pwd1_val) || !eng.test(pwd1_val) || !spc.test(pwd1_val)) {
+	if (
+		pwd1_val !== pwd2_val ||
+		pwd1_val.length < len ||
+		!num.test(pwd1_val) ||
+		!eng.test(pwd1_val) ||
+		!spc.test(pwd1_val)
+	) {
 		resetErr(pwdEl1);
 		const errMsg = document.createElement('p');
 		errMsg.innerText = `비밀번호 ${len}글자 이상, 특수문자, 영문, 숫자를 모두 포함하여 입력하시오`;
@@ -50,7 +64,27 @@ function isTxt(name, len) {
 		resetErr(pwdEl1);
 		return true;
 	}
-} */
+}
+
+function isNum(phone, len) {
+	const num = /[0-9]/;
+	const eng = /[a-zA-Z]/;
+	const spc = /[!@#$%^&*()_+]/;
+
+	const phoneEl = form.querySelector(`[name=${phone}]`);
+	const phone_val = form.querySelector(`[name=${phone}]`).value;
+
+	if (phone_val !== phone_val.length < len || !num.test(phone_val) || !eng.test(phone_val) || !spc.test(phone_val)) {
+		resetErr(phoneEl);
+		const errMsg = document.createElement('p');
+		errMsg.innerText = `휴대폰 번호 ${len}글자 이상, 특수문자, 영문, 숫자를 모두 포함하여 입력하시오`;
+		phoneEl.closest('td').append(errMsg);
+		return false;
+	} else {
+		resetErr(phoneEl);
+		return true;
+	}
+}
 
 function isEmail(name, len) {
 	const email = form.querySelector(`[name=${name}]`);
