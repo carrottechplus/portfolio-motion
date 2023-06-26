@@ -188,71 +188,32 @@ label {
   top: 50%;
   right: 3%;
   transform: translateY(-50%);
-  width: 26px;
-  height: auto;
   display: flex;
   flex-direction: column;
 }
-#scroll_navi::before {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: block;
-  background: #000;
-  width: 2px;
-  height: 100%;
-  border-radius: 2px;
-  content: "";
-  z-index: 1;
-}
 #scroll_navi button {
-  position: relative;
-  width: 26px;
-  height: 26px;
-  border-radius: 26px;
-  background: #f0f0f0;
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-bottom: 15px;
+  background-color: transparent;
   border: 1px solid #080808;
-  z-index: 2;
-  transition: background-color 0.2s;
+  border-radius: 18px;
   cursor: pointer;
+  transition: 0.3s ease all;
 }
-#scroll_navi button:not(:first-child) {
-  margin-top: 26px;
+#scroll_navi button:hover {
+  background-color: #ff3c31;
+  border-color: #ff3c31;
 }
-#scroll_navi .tab_active__bg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -2px;
-  background: #f0f0f0 url("../../img/circle-solid.svg") no-repeat center;
-  background-size: contain;
-  width: 30px;
-  height: 30px;
-  z-index: 3;
-  opacity: 0;
-  transform: translateY(-2px);
-  transition: all 0.2s ease-in-out;
-  border-radius: 30px;
+#scroll_navi button:last-child {
+  margin-bottom: 0;
 }
-#scroll_navi button.on ~ .tab_active__bg {
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-#scroll_navi button.on:nth-child(1) ~ .tab_active__bg {
-  transform: translateY(-2px);
-}
-#scroll_navi button.on:nth-child(2) ~ .tab_active__bg {
-  transform: translateY(50px);
-}
-#scroll_navi button.on:nth-child(3) ~ .tab_active__bg {
-  transform: translateY(102px);
-}
-#scroll_navi button.on:nth-child(4) ~ .tab_active__bg {
-  transform: translateY(154px);
-}
-#scroll_navi button.on:nth-child(5) ~ .tab_active__bg {
-  transform: translateY(206px);
+#scroll_navi button.on {
+  height: 60px;
+  cursor: auto;
+  background-color: #ff3c31;
+  border-color: #ff3c31;
 }
 
 .main_wrap,
@@ -1282,7 +1243,10 @@ label {
   }
 }
 
-.sub_wrap .loading {
+.sub_wrap .members_wrap {
+  padding: 0 10vw;
+}
+.sub_wrap .members_wrap .loading {
   position: fixed;
   top: 0;
   left: 0;
@@ -1293,9 +1257,6 @@ label {
   content: "";
   opacity: 1;
   transition: 1s;
-}
-.sub_wrap .members_wrap {
-  padding: 0 10vw;
 }
 .sub_wrap .members_wrap .head_title, .sub_wrap .members_wrap .head_title *, .head_title .sub_wrap .members_wrap * {
   letter-spacing: 5px;
@@ -1510,24 +1471,60 @@ label {
   font-size: 20px;
 }
 .sub_wrap .gallery_wrap .loading {
+  display: flex;
+  position: relative;
+  align-content: space-around;
+  justify-content: center;
+  opacity: 1;
   position: fixed;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  top: 50%;
+  transform: scale(2);
+  margin-left: -50px;
+  margin-top: -50px;
+  transform-origin: center center;
   z-index: 10;
-  width: 100%;
-  height: 100%;
-  opacity: 0.8;
-  z-index: 100;
+}
+.sub_wrap .gallery_wrap .loading::after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 9;
+}
+.sub_wrap .gallery_wrap .loading .loader-svg {
+  fill: none;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke: rgb(11, 11, 11);
+}
+.sub_wrap .gallery_wrap .loading .loader-svg.bg {
+  stroke-width: 9px;
+  stroke: rgb(255, 255, 255);
+}
+.sub_wrap .gallery_wrap .loading .animate {
+  stroke-dasharray: 242.6;
+  animation: fill-animation 1s cubic-bezier(1, 1, 1, 1) 0s infinite;
 }
 .sub_wrap .gallery_wrap .loading.off {
   opacity: 0;
   z-index: -1;
 }
-.sub_wrap .gallery_wrap .loading img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+@keyframes fill-animation {
+  0% {
+    stroke-dasharray: 40 242.6;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 141.3;
+    stroke-dashoffset: 141.3;
+  }
+  100% {
+    stroke-dasharray: 40 242.6;
+    stroke-dashoffset: 282.6;
+  }
 }
 .sub_wrap .gallery_wrap .inner {
   padding-top: 100px;
@@ -1723,6 +1720,7 @@ label {
   }
   .sub_wrap .gallery_wrap .gallery_list li {
     width: calc(50% - 20px);
+    margin-left: 20px;
   }
 }
 @media screen and (max-width: 639px) {

@@ -70,6 +70,7 @@ function setURL(type, opt) {
 
 async function fetchData(url) {
 	loading.classList.remove('off');
+	document.body.style.overflow = 'hidden';
 	wrap.classList.remove('on'); //Isotope
 
 	const res = await fetch(url);
@@ -78,6 +79,7 @@ async function fetchData(url) {
 	// console.log(items);
 	if (items.length === 0) {
 		loading.classList.add('off');
+		document.body.style.overflow = 'auto';
 		wrap.classList.add('on');
 		return alert('검색 결과가 없습니다.');
 	}
@@ -94,10 +96,14 @@ function createList(arr) {
 			<div class='gallery_item'>
 				<span class='gallery_item__num'>${num}</span>
 				<p class='gallery_item__pic'>
-					<img class='pic' src='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_w.jpg' alt='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg' />
+					<img class='pic' src='https://live.staticflickr.com/${item.server}/${item.id}_${
+			item.secret
+		}_w.jpg' alt='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg' />
 				</p>
 				<div class='gallery_item__profile gallery_profile'>	
-					<p class='gallery_profile__img'><img src='http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg' /></p>
+					<p class='gallery_profile__img'><img src='http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${
+			item.owner
+		}.jpg' /></p>
 					<span class='gallery_profile__id'>${item.owner}</span>
 					<p class='gallery_profile__title'>${item.title === '' ? 'Have a good day !' : item.title}</p>
 				</div>
@@ -126,6 +132,7 @@ function isoLayout() {
 	});
 	wrap.classList.add('on');
 	loading.classList.add('off');
+	document.body.style.overflow = 'auto';
 }
 
 function setLoading() {
