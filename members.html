@@ -9,6 +9,7 @@
   <script src="https://kit.fontawesome.com/2ffeb95e18.js" crossorigin="anonymous"></script>
   <script defer src="js/main.js"></script>
   <script defer src="js/members.js"></script>
+  <script defer src="js/anime.js"></script>
   <title>MOTION portfolio</title>
 </head>
 
@@ -35,6 +36,7 @@
     </div>
   </header>
   <section class="sub_wrap">
+    <span class="loading"></span>
     <div class="members_wrap">
       <h2 class="head_title">MEMBERS</h2>
       <span class="head_title__sub"></span>
@@ -132,6 +134,35 @@
       </div>
     </div>
   </footer>
+  <script>
+    const member = document.querySelector('.members_wrap');
+    const title = member.querySelector('.head_title');
+
+    window.addEventListener('load', () => {
+      const loading = document.querySelector('.loading');
+      loading.style.opacity = 0;
+
+      setTimeout(() => {
+        title.style.transform = 'scale(1)';
+        title.style.transformOrigin = 'left top';
+        member.classList.add('on');
+        loading.style.display = 'none';
+      }, 500)
+    })
+
+    // window.addEventListener('load', () => {
+    //   new Anime(title, {
+    //     prop: 'width',
+    //     value: 50,
+    //     duration: 500,
+    //   });
+    //   new Anime(title, {
+    //     prop: 'height',
+    //     value: 50,
+    //     duration: 500,
+    //   });
+    // });
+  </script>
 </body>
 
 </html>

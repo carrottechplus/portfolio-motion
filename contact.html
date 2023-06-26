@@ -9,7 +9,7 @@
   <script src="https://kit.fontawesome.com/2ffeb95e18.js" crossorigin="anonymous"></script>
   <script defer src="js/main.js"></script>
   <script defer src="js/anime.js"></script>
-  <script defer src="js/form.js"></script>
+  <script src="js/form.js"></script>
   <title>MOTION portfolio</title>
 </head>
 
@@ -43,7 +43,7 @@
           <strong>TOGETHER</strong>
         </div>
         <div class="contact_form">
-          <form action="result.html" method="get" id="member">
+          <form action="result.html" method="get" id="contact">
             <fieldset>
               <legend class="text_hidden">회원가입 폼 입력항목</legend>
               <table>
@@ -212,6 +212,18 @@
 
   <script>
 
+    const form = document.querySelector('#contact');
+    const btnSubmit = form.querySelector('input[type=submit]');
+
+    btnSubmit.addEventListener('click', (e) => {
+      if (!isTxt(form, 'userName', 5)) e.preventDefault();
+      if (!isTxt(form, 'company', 2)) e.preventDefault();
+      // if (!isPwd(form, 'pwd1', 'pwd2', 4)) e.preventDefault();
+      if (!isEmail(form, 'email', 6)) e.preventDefault();
+      if (!isSelect(form, 'pos')) e.preventDefault();
+      if (!isCheck(form, 'gender')) e.preventDefault();
+      if (!isCheck(form, 'method')) e.preventDefault();
+    });
     const pic = document.querySelector('button');
     const box = document.querySelector('.contact_head');
 

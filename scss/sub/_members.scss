@@ -1,8 +1,23 @@
 .sub_wrap {
+	.loading {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: $primary-color;
+		width: 100%;
+		height: 100vh;
+		z-index: 111;
+		content: '';
+		opacity: 1;
+		transition: 1s;
+	}
 	.members_wrap {
 		padding: 0 10vw;
 		.head_title {
 			letter-spacing: 5px;
+			transform: scale(2.5);
+			transform-origin: left top;
+			transition: 0.3s cubic-bezier(0.54, 0.06, 0.54, 1);
 		}
 		.inner {
 			margin-top: 20px;

@@ -656,11 +656,9 @@ label {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 0;
   z-index: 1;
   background-color: gray;
   border-radius: 0.25em;
-  padding-top: 56.25%;
 }
 .main_wrap .intro_wrap .intro_visual__img img,
 .main_wrap .intro_wrap .intro_visual__img video {
@@ -1284,11 +1282,26 @@ label {
   }
 }
 
+.sub_wrap .loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #080808;
+  width: 100%;
+  height: 100vh;
+  z-index: 111;
+  content: "";
+  opacity: 1;
+  transition: 1s;
+}
 .sub_wrap .members_wrap {
   padding: 0 10vw;
 }
 .sub_wrap .members_wrap .head_title, .sub_wrap .members_wrap .head_title *, .head_title .sub_wrap .members_wrap * {
   letter-spacing: 5px;
+  transform: scale(2.5);
+  transform-origin: left top;
+  transition: 0.3s cubic-bezier(0.54, 0.06, 0.54, 1);
 }
 .sub_wrap .members_wrap .inner {
   margin-top: 20px;

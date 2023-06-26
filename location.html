@@ -7,11 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/2ffeb95e18.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=784eb757547ac34035be2dc3389dc21d"></script>
   <script defer src="js/main.js"></script>
   <script defer src="js/location.js"></script>
-  <script defer src="js/form.js"></script>
-  <script defer type="text/javascript"
-    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=784eb757547ac34035be2dc3389dc21d"></script>
+  <script src="js/form.js"></script>
   <title>MOTION portfolio</title>
 </head>
 
@@ -41,10 +40,18 @@
     <div class="location_wrap">
       <h2 class="head_title">Location</h2>
       <div class="inner">
-        <div class="wrap" id="map"></div>
+        <div class="map_wrap">
+          <div class="wrap" id="map"></div>
+          <ul class="branch">
+            <li class="on">본점</li>
+            <li>지점</li>
+            <li>지점1</li>
+          </ul>
+          <button type="button" class="btnToggle">Traffic 보지 않기</button>
+        </div>
         <div class="contact_form">
           <div class="form_wrap">
-            <form action="result.html" method="get" id="contact">
+            <form action="location.html" method="get" id="location">
               <fieldset>
                 <legend class="text_hidden">연락 입력항목</legend>
                 <table>
@@ -179,21 +186,15 @@
     </div>
   </footer>
   <script>
+    const form = document.querySelector('#location');
+    const btnSubmit = form.querySelector('input[type=submit]');
 
-    // const scrollTop = () => {
-    //   const totop = document.querySelector('.btn_totop');
-
-    //   const scrollWindow = () => {
-    //     if (window.scrollY != 0) {
-    //       setTimeout(() => {
-    //         window.scrollTo(0, window.scrollY - 50);
-    //         scrollWindow();
-    //       }, 10);
-    //     }
-    //   };
-    //   totop.addEventListener("click", scrollWindow);
-    // };
-    // scrollTop();
+    btnSubmit.addEventListener('click', (e) => {
+      if (!isTxt(form, 'userName', 5)) e.preventDefault();
+      if (!isNum(form, 'phone', 10)) e.preventDefault();
+      if (!isEmail(form, 'email', 6)) e.preventDefault();
+      if (!isSelect(form, 'pos')) e.preventDefault();
+    });
   </script>
 </body>
 
