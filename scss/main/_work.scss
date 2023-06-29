@@ -12,7 +12,12 @@
 			justify-content: space-between;
 
 			.head_title {
+				display: inline-block;
 				font-size: 10vw;
+				transform: scaleY(0);
+				transform-origin: bottom center;
+				opacity: 0;
+				transition: 0.4s ease-in-out;
 			}
 			.head_title__sub {
 				display: inline-block;
@@ -24,6 +29,9 @@
 
 		.work_list_wrap {
 			margin-top: 10vw;
+			transform: translateY(300px);
+			opacity: 0;
+			transition: 0.4s ease-in-out;
 
 			.work_list {
 				display: flex;
@@ -108,6 +116,25 @@
 		.btn_wrap {
 			margin-top: 64px;
 			text-align: center;
+		}
+	}
+
+	.on {
+		.work_wrap {
+			.head_title_wrap {
+				.head_title {
+					transform: scaleY(1);
+					opacity: 1;
+					& + .head_title {
+						transition-delay: 0.3s;
+					}
+				}
+			}
+			.work_list_wrap {
+				transform: translateY(0);
+				opacity: 1;
+				transition-delay: 0.8s;
+			}
 		}
 	}
 

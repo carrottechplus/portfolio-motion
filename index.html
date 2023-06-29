@@ -10,6 +10,9 @@
   <script defer src="js/main.js"></script>
   <script defer src="js/anime.js"></script>
   <script defer src="js/scroll.js"></script>
+  <script defer type="module" src="js/slide.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <title>MOTION portfolio</title>
 </head>
 
@@ -122,7 +125,7 @@
     </section>
     <section class="news_wrap myScroll">
       <div class="inner">
-        <h2 class="head_title">WHAT WE'RE <br>POSTING</h2>
+        <h2 class="head_title"><span>WHAT WE'RE </span><br><span>POSTING</span></h2>
         <div class="news_list_wrap">
           <div class="news_list">
             <!-- <strong>News</strong> -->
@@ -246,20 +249,31 @@
               YOU DO IT.</h2>
             <p class="btn_wrap"><a href="#" class="btn_round"><span>ABOUT US</span></a></p>
           </div>
-          <div class="about_img_wrap">
-            <p class="card01"><img src="img/pic2.jpeg" alt=""></p>
-            <p class="card02"><img src="img/pic1.jpeg" alt=""></p>
-            <p class="card03"><img src="img/contact.jpg" alt=""></p>
-            <p class="card04"><img src="img/team.jpeg" alt=""></p>
+          <div id="" class="about_img_wrap">
+            <div id="visual">
+              <div class="swiper-wrapper">
+                <article data-slide="1" class="swiper-slide"><img src="img/pic2.jpeg" alt=""></article>
+                <article data-slide="2" class="swiper-slide"><img src="img/pic1.jpeg" alt=""></article>
+                <article data-slide="3" class="swiper-slide"><img src="img/contact.jpg" alt=""></article>
+                <article data-slide="4" class="swiper-slide"><img src="img/team.jpeg" alt=""></article>
+              </div>
+            </div>
+            <div class="swiper-option">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <span class="btnPlay on">play</span>
+              <span class="btnPause">pause</span>
+            </div>
           </div>
-          <div class="about_navi">
+
+          <!-- <div class="about_navi">
             <p class="about_prev">
               <span></span>
             </p>
             <p class="about_next">
               <span></span>
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -269,7 +283,7 @@
       <button></button>
       <button></button>
       <button></button>
-      <span class="scroll_navi__on"></span>
+      <!-- <span class="scroll_navi__on"></span> -->
     </div>
   </main>
   <footer class="footer">

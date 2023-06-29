@@ -11,7 +11,9 @@ const secs = document.querySelectorAll('.myScroll');
 const list = document.querySelector('#scroll_navi');
 const btns = list.querySelectorAll('button');
 const speed = 500;
-const baseline = -300;
+const baseline = -window.innerHeight / 2;
+// const baseline = 300;
+console.log(baseline);
 let enableEvent = true;
 let autoScroll = false;
 let eventBlocker = null;
@@ -45,9 +47,11 @@ function activation() {
 
 	secs.forEach((_, idx) => {
 		if (scroll >= secs[idx].offsetTop + baseline) {
+			console.log(scroll, '1');
+			console.log(secs[idx].offsetTop, '2');
+			console.log(secs[idx].offsetTop + baseline, '3');
 			for (const el of btns) el.classList.remove('on');
 			btns[idx].classList.add('on');
-			//for (const el of secs) el.classList.remove('on');
 			secs[idx].classList.add('on');
 		}
 	});
@@ -66,6 +70,7 @@ function moveScroll(idx) {
 function modifyPos() {
 	const active = list.querySelector('li.on');
 	const active_index = Array.from(btns).indexOf(active);
+	console.log(active_index);
 	window.scrollTo({ top: secs[active_index].offsetTop, behavior: 'smooth' });
 }
 

@@ -679,9 +679,10 @@ label {
 .main_wrap .work_wrap .head_title_wrap .head_title, .main_wrap .work_wrap .head_title_wrap .head_title *, .head_title .main_wrap .work_wrap .head_title_wrap * {
   display: inline-block;
   font-size: 10vw;
-  transform: translateY(100px);
+  transform: scaleY(0);
+  transform-origin: bottom center;
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.4s ease-in-out;
 }
 .main_wrap .work_wrap .head_title_wrap .head_title__sub {
   display: inline-block;
@@ -691,6 +692,9 @@ label {
 }
 .main_wrap .work_wrap .work_list_wrap {
   margin-top: 10vw;
+  transform: translateY(300px);
+  opacity: 0;
+  transition: 0.4s ease-in-out;
 }
 .main_wrap .work_wrap .work_list_wrap .work_list {
   display: flex;
@@ -764,8 +768,16 @@ label {
   text-align: center;
 }
 .main_wrap .on .work_wrap .head_title_wrap .head_title, .main_wrap .on .work_wrap .head_title_wrap .head_title *, .head_title .main_wrap .on .work_wrap .head_title_wrap * {
+  transform: scaleY(1);
+  opacity: 1;
+}
+.main_wrap .on .work_wrap .head_title_wrap .head_title + .head_title, .main_wrap .on .work_wrap .head_title_wrap .head_title * + *, .head_title .main_wrap .on .work_wrap .head_title_wrap * + * {
+  transition-delay: 0.3s;
+}
+.main_wrap .on .work_wrap .work_list_wrap {
   transform: translateY(0);
   opacity: 1;
+  transition-delay: 0.8s;
 }
 @media screen and (max-width: 979px) {
   .main_wrap .work_wrap .head_title_wrap {
@@ -807,10 +819,21 @@ label {
   width: calc(50% - 8px);
   padding-right: 8px;
 }
+.main_wrap .news_wrap .head_title span, .head_title .main_wrap .news_wrap * span {
+  display: inline-block;
+  white-space: nowrap;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: 0.4s ease-in-out;
+  opacity: 0;
+}
 .main_wrap .news_wrap .news_list_wrap {
   flex: 1;
   width: calc(50% - 8px);
   margin-left: 8px;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: 0.5s ease-in-out;
 }
 .main_wrap .news_wrap .news_list_wrap .news_list .small {
   display: block;
@@ -837,9 +860,12 @@ label {
 .main_wrap .news_wrap .news_list_wrap .news_list .news_item li .news_link {
   display: inline-flex;
   width: 100%;
-  height: 40px;
+  height: 60px;
   align-items: center;
   justify-content: space-between;
+}
+.main_wrap .news_wrap .news_list_wrap .news_list .news_item li .news_link__title {
+  font-size: 18px;
 }
 .main_wrap .news_wrap .news_list_wrap .news_list .news_item li .news_link__date {
   font-size: 14px;
@@ -847,6 +873,21 @@ label {
 }
 .main_wrap .news_wrap .news_list_wrap .btn_wrap {
   margin-top: 90px;
+}
+.main_wrap .news_wrap.on .head_title span, .head_title .main_wrap .news_wrap.on * span {
+  transform: scaleY(1);
+  opacity: 1;
+}
+.main_wrap .news_wrap.on .head_title span:nth-of-type(1), .head_title .main_wrap .news_wrap.on * span:nth-of-type(1) {
+  transition-delay: 0.1s;
+}
+.main_wrap .news_wrap.on .head_title span:nth-of-type(2), .head_title .main_wrap .news_wrap.on * span:nth-of-type(2) {
+  transition-delay: 0.3s;
+}
+.main_wrap .news_wrap.on .news_list_wrap {
+  opacity: 1;
+  transform: scaleY(1);
+  transition-delay: 0.4s;
 }
 @media screen and (max-width: 979px) {
   .main_wrap .news_wrap {
@@ -895,6 +936,10 @@ label {
 }
 .main_wrap .gallery_wrap .head_title_wrap .head_title, .main_wrap .gallery_wrap .head_title_wrap .head_title *, .head_title .main_wrap .gallery_wrap .head_title_wrap * {
   font-size: 8vw;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
 }
 .main_wrap .gallery_wrap .gallery_list_wrap .gallery_list {
   display: flex;
@@ -904,6 +949,9 @@ label {
   flex: 1;
   width: 33.3333333333%;
   border-left: 1px solid #080808;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.4s ease-in-out;
 }
 .main_wrap .gallery_wrap .gallery_list_wrap .gallery_list li:nth-child(3n+3) {
   border-right: 1px solid #080808;
@@ -946,7 +994,6 @@ label {
   position: relative;
   overflow: hidden;
   padding-top: 66.666%;
-  transition: 0.2s;
 }
 .main_wrap .gallery_wrap .gallery_list_wrap .gallery_list li .gallery_item__img::before {
   overflow: hidden;
@@ -962,7 +1009,7 @@ label {
   content: "";
   mix-blend-mode: multiply;
   z-index: 1;
-  transition: 0.3s;
+  transition: opacity 0.3s;
 }
 .main_wrap .gallery_wrap .gallery_list_wrap .gallery_list li .gallery_item__img img {
   width: 100%;
@@ -981,6 +1028,23 @@ label {
 }
 .main_wrap .gallery_wrap .gallery_list_wrap .gallery_list li .gallery_item .gallery_item__img:hover img {
   transform: scale(1.2);
+}
+.main_wrap .on .gallery_wrap .head_title_wrap .head_title, .main_wrap .on .gallery_wrap .head_title_wrap .head_title *, .head_title .main_wrap .on .gallery_wrap .head_title_wrap * {
+  transform: scaleY(1);
+  opacity: 1;
+}
+.main_wrap .on .gallery_wrap .gallery_list_wrap li {
+  opacity: 1;
+  transform: translateY(0);
+}
+.main_wrap .on .gallery_wrap .gallery_list_wrap li:nth-of-type(1) {
+  transition-delay: 0.2s;
+}
+.main_wrap .on .gallery_wrap .gallery_list_wrap li:nth-of-type(2) {
+  transition-delay: 0.4s;
+}
+.main_wrap .on .gallery_wrap .gallery_list_wrap li:nth-of-type(3) {
+  transition-delay: 0.6s;
 }
 @media screen and (max-width: 979px) {
   .main_wrap .gallery_wrap {
@@ -1034,6 +1098,7 @@ label {
 }
 
 .main_wrap .about_wrap {
+  height: 100vh;
   margin-top: 10vw;
   margin-bottom: 10vw;
   padding: 0 10vw;
@@ -1055,38 +1120,85 @@ label {
   font-size: 1.1875em;
   font-weight: 400;
   line-height: 1;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 0.4s ease-in-out;
+  transition-delay: 0.1s;
 }
 .main_wrap .about_wrap .about_title_wrap .head_title, .main_wrap .about_wrap .about_title_wrap .head_title *, .head_title .main_wrap .about_wrap .about_title_wrap * {
   margin-top: 30px;
   font-size: 110px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: 0.4s ease-in-out;
+  transition-delay: 0.3s;
+  transition-duration: 0.3s;
 }
 .main_wrap .about_wrap .about_title_wrap .btn_wrap {
   margin-top: 90px;
 }
 .main_wrap .about_wrap .about_img_wrap {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: 0.5s ease-in-out;
+  transition-delay: 0.7s;
+  transition-duration: 0.7s;
   flex: 1;
   width: calc(50% - 8px);
   margin-left: 8px;
   background-color: #d8d8d8;
   border-radius: 20px;
   position: relative;
-  overflow: hidden;
-  padding-top: 50%;
-  display: flex;
 }
-.main_wrap .about_wrap .about_img_wrap p {
-  position: absolute;
-  top: 0;
-  left: 100%;
+.main_wrap .about_wrap .about_img_wrap #visual {
+  overflow: hidden;
+}
+.main_wrap .about_wrap .about_img_wrap .swiper-wrapper article {
   width: 100%;
-  height: 100%;
+  height: 85vh;
   z-index: 3;
   transition: 0.7s ease;
 }
-.main_wrap .about_wrap .about_img_wrap p img {
+.main_wrap .about_wrap .about_img_wrap .swiper-wrapper article img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.main_wrap .about_wrap .about_img_wrap .swiper-option {
+  position: absolute;
+  bottom: 0;
+  right: calc(100% + 10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.main_wrap .about_wrap .about_img_wrap .swiper-option * {
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  margin: 0;
+  flex: 1 1 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 1px solid #1d1d1d;
+  text-align: center;
+  color: #1d1d1d;
+  line-height: 50px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.main_wrap .about_wrap .about_img_wrap .swiper-option .swiper-button-prev:after,
+.main_wrap .about_wrap .about_img_wrap .swiper-option .swiper-button-next:after {
+  font-size: 20px;
+}
+.main_wrap .about_wrap .about_img_wrap .swiper-option span.on {
+  background: #1d1d1d;
+  color: #fff;
 }
 .main_wrap .about_wrap .about_img_wrap p:nth-of-type(1) {
   left: 0;
@@ -1229,6 +1341,18 @@ label {
     width: 20px;
     opacity: 1;
   }
+}
+.main_wrap .on .about_wrap .about_title_wrap .head_title__sub {
+  opacity: 1;
+  transform: translateY(0);
+}
+.main_wrap .on .about_wrap .about_title_wrap .head_title, .main_wrap .on .about_wrap .about_title_wrap .head_title *, .head_title .main_wrap .on .about_wrap .about_title_wrap * {
+  opacity: 1;
+  transform: translateX(0);
+}
+.main_wrap .on .about_wrap .about_img_wrap {
+  opacity: 1;
+  transform: translateX(0);
 }
 @media screen and (max-width: 979px) {
   .main_wrap .about_wrap .inner {
