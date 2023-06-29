@@ -118,7 +118,7 @@ $gap: 30px;
 				stroke: rgb(255, 255, 255);
 			}
 			.animate {
-				stroke-dasharray: 242.6;
+				stroke-dasharray: 280;
 				animation: fill-animation 1s cubic-bezier(1, 1, 1, 1) 0s infinite;
 			}
 			&.off {
