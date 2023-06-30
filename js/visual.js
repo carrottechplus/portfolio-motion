@@ -14,8 +14,8 @@ window.addEventListener('scroll', () => {
 	const scroll = window.scrollY;
 	let top = visual.offsetTop - 100;
 	let scroll2 = scroll - visual.offsetTop;
-	const compStyles = window.getComputedStyle(visual);
-	let height1 = compStyles.getPropertyValue('height');
+	// const compStyles = window.getComputedStyle(visual);
+	// let height1 = compStyles.getPropertyValue('height');
 	// console.log(parseInt(compStyles.getPropertyValue('height')));
 	// const number = parseInt(compStyles.getPropertyValue('padding-top'));
 	// const number2 = (number * scroll2) / (top - bottom.offsetTop);
@@ -23,13 +23,13 @@ window.addEventListener('scroll', () => {
 
 	if (scrollLocation >= top && bottom_scroll > scrollLocation) {
 		let test = scrollLocation - top;
-		console.log(test, 'test');
+		console.log(test, 'test 구간 확인');
 
 		let height2 = parseInt(visual.style.height.replaceAll(/[^0-9]/g, ''));
 		console.log(height2, 'height2');
 		if (test < height2) {
 			console.log('작아짐');
-			visual.style.height = parseInt(height2 - test) + 'px';
+			// visual.style.height = parseInt(height2 - test) + 'px';
 		} else {
 			console.log('커짐');
 			// visual.style.height = parseInt(height2 + test) + 'px';
