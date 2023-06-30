@@ -10,7 +10,7 @@ const markerInfo = [
 		position: new kakao.maps.LatLng(37.57598923870742, 126.9768610125929),
 		imgSrc: 'img/marker.png',
 		imgSize: new kakao.maps.Size(85, 85),
-		imgPos: { offset: new kakao.maps.Point(85, 85) },
+		imgPos: { offset: new kakao.maps.Point(45, 80) },
 		button: btns[0],
 	},
 	{
@@ -18,7 +18,7 @@ const markerInfo = [
 		position: new kakao.maps.LatLng(37.578987, 126.976045),
 		imgSrc: 'img/marker.png',
 		imgSize: new kakao.maps.Size(85, 85),
-		imgPos: { offset: new kakao.maps.Point(85, 85) },
+		imgPos: { offset: new kakao.maps.Point(45, 80) },
 		button: btns[1],
 	},
 	{
@@ -26,7 +26,7 @@ const markerInfo = [
 		position: new kakao.maps.LatLng(33.450701, 126.570667),
 		imgSrc: 'img/marker.png',
 		imgSize: new kakao.maps.Size(85, 85),
-		imgPos: { offset: new kakao.maps.Point(85, 85) },
+		imgPos: { offset: new kakao.maps.Point(45, 80) },
 		button: btns[2],
 	},
 ];

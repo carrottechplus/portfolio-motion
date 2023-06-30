@@ -10,7 +10,7 @@
 		.branch {
 			position: relative;
 			display: inline-flex;
-			align-content: center;
+			align-items: center;
 			justify-content: space-between;
 			width: 380px;
 			margin: 0 10vw 50px;
@@ -311,9 +311,90 @@
 			padding: 0 5%;
 		}
 
+		.map_wrap {
+			.branch {
+				display: flex;
+				width: 380px;
+				margin: 0 auto 50px;
+				// height: 60px;
+				// border-radius: 60px;
+
+				button {
+					display: inline-block;
+					font-size: 18px;
+					font-weight: 300;
+					font-family: 'Verdana', sans-serif;
+					color: #666;
+					width: 50%;
+					height: 38px;
+					border-radius: 38px;
+					line-height: 38px;
+					text-align: center;
+					z-index: 2;
+
+					&.on {
+						color: #fff;
+						font-size: 19px;
+						font-weight: 500;
+						letter-spacing: -1px;
+					}
+				}
+				&__bg {
+					position: absolute;
+					top: 10px;
+					left: 0px;
+					display: inline-block;
+					width: 120px;
+					height: 40px;
+					background: $red;
+					box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+					border-radius: 40px;
+					z-index: 1;
+					opacity: 0;
+					-webkit-transform: translateX(10px);
+					transform: translateX(10px);
+					-webkit-transition: all 0.3s ease-in-out;
+					transition: all 0.3s ease-in-out;
+				}
+				button.on ~ .branch__bg {
+					-webkit-transition: all 0.3s ease-in-out;
+					transition: all 0.3s ease-in-out;
+					opacity: 1;
+				}
+				button.on:nth-child(1) ~ .branch__bg {
+					-webkit-transform: translateX(10px);
+					transform: translateX(10px);
+				}
+				button.on:nth-child(2) ~ .branch__bg {
+					-webkit-transform: translateX(130px);
+					transform: translateX(130px);
+				}
+				button.on:nth-child(3) ~ .branch__bg {
+					-webkit-transform: translateX(250px);
+					transform: translateX(250px);
+				}
+			}
+
+			.btnToggle {
+				margin-top: 15px;
+				display: inline-block;
+				width: auto;
+				padding: 0 20px;
+				background: #fff;
+				color: $primary-color;
+				border: 1px solid $primary-color;
+				line-height: 38px;
+			}
+
+			#map {
+				height: 50vh;
+				background: #111;
+			}
+		}
+
 		.contact_form {
 			display: flex;
-			flex-direction: column-reverse;
+			flex-direction: column;
 			margin-top: 100px;
 			padding: 0 10%;
 			position: relative;
