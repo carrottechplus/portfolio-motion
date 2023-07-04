@@ -71,8 +71,13 @@
 
 @media screen and (max-width: $tablet) {
 	.header_wrap {
+		overflow: hidden;
+		width: 100%;
 		justify-content: space-between;
-
+		.logo {
+			flex: 1;
+			min-width: 0;
+		}
 		#nav {
 			display: none;
 			// position: fixed;
@@ -119,10 +124,13 @@
 		}
 
 		.nav_side {
-			flex: 1;
+			// flex: 1;
 			text-align: right;
+			// min-width: 0;
 		}
 		.btn_menu {
+			flex: 1;
+			min-width: 0;
 			display: inline-block;
 		}
 	}

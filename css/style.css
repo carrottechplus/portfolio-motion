@@ -315,16 +315,23 @@ label {
 
 @media screen and (max-width: 979px) {
   .header_wrap {
+    overflow: hidden;
+    width: 100%;
     justify-content: space-between;
+  }
+  .header_wrap .logo {
+    flex: 1;
+    min-width: 0;
   }
   .header_wrap #nav {
     display: none;
   }
   .header_wrap .nav_side {
-    flex: 1;
     text-align: right;
   }
   .header_wrap .btn_menu {
+    flex: 1;
+    min-width: 0;
     display: inline-block;
   }
 }
